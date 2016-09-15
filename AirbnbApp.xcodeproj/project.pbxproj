@@ -19,6 +19,7 @@
 		73C42FA21D8ADFFB0041D769 /* CoreLocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C42FA11D8ADFFB0041D769 /* CoreLocationController.swift */; };
 		73C42FA41D8AE0630041D769 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C42FA31D8AE0630041D769 /* API.swift */; };
 		73C42FA61D8AE1170041D769 /* GlobalVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C42FA51D8AE1170041D769 /* GlobalVars.swift */; };
+		73C42FA81D8AEAFD0041D769 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C42FA71D8AEAFD0041D769 /* LoginView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		73C42FA11D8ADFFB0041D769 /* CoreLocationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreLocationController.swift; sourceTree = "<group>"; };
 		73C42FA31D8AE0630041D769 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		73C42FA51D8AE1170041D769 /* GlobalVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalVars.swift; sourceTree = "<group>"; };
+		73C42FA71D8AEAFD0041D769 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		944E24125F62145C6B1710BC /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5354EF3D6BEC59CCB818F1F /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +99,7 @@
 				73C42FA31D8AE0630041D769 /* API.swift */,
 				73C42FA51D8AE1170041D769 /* GlobalVars.swift */,
 				73C42F791D8AC8CB0041D769 /* ViewController.swift */,
+				73C42FA71D8AEAFD0041D769 /* LoginView.swift */,
 				73C42F7B1D8AC8CB0041D769 /* Main.storyboard */,
 				73C42F951D8AD28A0041D769 /* airbnb-logo.png */,
 				73C42F941D8AD1830041D769 /* Left Sidebar */,
@@ -247,6 +250,7 @@
 				73C42F781D8AC8CB0041D769 /* AppDelegate.swift in Sources */,
 				73C42FA61D8AE1170041D769 /* GlobalVars.swift in Sources */,
 				73C42FA41D8AE0630041D769 /* API.swift in Sources */,
+				73C42FA81D8AEAFD0041D769 /* LoginView.swift in Sources */,
 				73C42F8F1D8ACCE60041D769 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
