@@ -1,0 +1,41 @@
+PODS:
+  - Alamofire (3.4.1)
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
+  - DZNEmptyDataSet (1.8.1)
+  - FBSDKCoreKit (4.15.1):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.15.1):
+    - FBSDKCoreKit
+  - GoogleMaps (2.0.1):
+    - GoogleMaps/Maps (= 2.0.1)
+  - GoogleMaps/Base (2.0.1)
+  - GoogleMaps/Maps (2.0.1):
+    - GoogleMaps/Base (= 2.0.1)
+  - SVProgressHUD (2.0.3)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - Alamofire (= 3.4.1)
+  - DZNEmptyDataSet
+  - FBSDKCoreKit
+  - FBSDKLoginKit
+  - GoogleMaps
+  - SVProgressHUD
+  - SwiftyJSON
+
+SPEC CHECKSUMS:
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
+  DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  FBSDKCoreKit: fc7fa53d16b095ee3fd53f0cd59f1df8bcbb634d
+  FBSDKLoginKit: 073f79b3b2e762fc6f54a283fe15f45372d59f5f
+  GoogleMaps: f09da64fc987c1aa29394567c3cab5a3df83c402
+  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+COCOAPODS: 0.39.0
