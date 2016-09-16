@@ -19,9 +19,9 @@ extension UIViewController {
     // Sets navigation bar title, tint and bar color, as well as the back button item title and any needed atributes
     func setNavBar(title: String){
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
-        self.navigationController?.navigationBar.tintColor = UIColor.whiteColor()
-        self.navigationController!.navigationBar.barTintColor = UIColorFromRGB(0x24cf5f)
-        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(),
+        self.navigationController?.navigationBar.tintColor = UIColor.blackColor()
+        self.navigationController!.navigationBar.barTintColor = UIColor.whiteColor()
+        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.blackColor(),
                                                                         NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 20)!
                                                                         ]
         self.navigationItem.title = title;

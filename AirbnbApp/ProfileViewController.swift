@@ -15,6 +15,7 @@ class ProfileViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavBar(NSLocalizedString("Perfil", comment: ""))
         returnUserData()
 //        self.tableView
     }
@@ -34,7 +35,7 @@ class ProfileViewController: UITableViewController {
                 print("fetched user: \(result)")
                 self.nameLabel.text = (result["first_name"] as! String) + " " + (result["last_name"] as! String)
                 self.emailLabel.text = (result["email"] as! String)
-                self.profileImage.downloadImageFrom(link: (result["picture"]!!["data"]!!["url"] as! String), contentMode: .ScaleAspectFit)
+                self.profileImage.downloadImageFrom(link: (result["picture"]!!["data"]!!["url"] as! String), contentMode: .ScaleAspectFill)
                 
             }
         })

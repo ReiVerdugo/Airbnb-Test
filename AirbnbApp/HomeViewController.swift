@@ -24,6 +24,7 @@ class HomeViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavBar(NSLocalizedString("Listado", comment: ""))
         getListings()
     }
     
@@ -39,7 +40,6 @@ class HomeViewController : UIViewController {
                 if response.result.isSuccess {
 //                    SVProgressHUD.showSuccessWithStatus("Artists found")
                     let listingInfo = JSON(response.result.value!)["search_results"].arrayValue
-                    print(listingInfo)
                     for listing in listingInfo {
                         let list = ListingClass()
                         list.info = listing
@@ -66,7 +66,7 @@ class HomeViewController : UIViewController {
             let price = info["pricing_quote"]["listing_currency"].stringValue + " " + info["pricing_quote"]["nightly_price"].stringValue
             cell.price.text = price
             cell.listingImage.downloadImageFrom(link: info["listing"]["picture_url"].stringValue, contentMode: .ScaleAspectFit)
-
+            
             
         }
         self.collectionDataSource = CollectionViewDataSource(anItems: listings, cellIdentifier: "listingCell", aconfigureCellBlocks: configureCell)

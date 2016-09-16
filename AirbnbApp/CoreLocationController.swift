@@ -130,16 +130,12 @@ class CoreLocationController: NSObject,CLLocationManagerDelegate {
         let lonText:String = String(format: "%.4f", lon)
         
         print("TEXTOS: \(latText) y \(lonText)")
-        
-        
-        if let useGps = defaults.stringForKey("gps") {
             
+        if let useGps = defaults.stringForKey("gps") {
             if useGps == "true"{
-                
 
                 Router.location = "\(lonText),\(latText)"
 
-                
 
             }
             
