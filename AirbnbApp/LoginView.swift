@@ -22,7 +22,6 @@ class LoginView : UIViewController {
         if (FBSDKAccessToken.currentAccessToken() != nil){
             // User is already logged in, do work such as go to next view controller.
             print(FBSDKAccessToken.currentAccessToken().tokenString)
-            returnUserData()
             self.performSegueWithIdentifier("login", sender: nil)
         }
     }
@@ -40,7 +39,6 @@ class LoginView : UIViewController {
             } else {
                 print(result)
                 print("LoggedIn")
-                self.returnUserData()
                 let param = [
                     "token":FBSDKAccessToken.currentAccessToken().tokenString,
                     "version":"3.0",
@@ -54,28 +52,6 @@ class LoginView : UIViewController {
 
     }
     
-    func returnUserData()
-    {
-        let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields": "email, first_name, last_name, picture"])
-        graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
-            
-            if ((error) != nil)
-            {
-                // Process error
-                print("Error: \(error)")
-            }
-            else
-            {
-                print("fetched user: \(result)")
-//                let userName : NSString = result.valueForKey("name") as! NSString
-//                print("User Name is: \(userName)")
-//                let userEmail : NSString = result.valueForKey("email") as! NSString
-//                print("User Email is: \(userEmail)")
-//                let image : NSString = result.valueForKey("imageUrl") as! NSString
-//                print("Image is: \(image)")
-                
-            }
-        })
-    }
+    
 
 }
