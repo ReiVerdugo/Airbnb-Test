@@ -10,7 +10,7 @@ import UIKit
 
 typealias CollectionViewCellConfigureBlock = (cell: AnyObject, item: AnyObject) -> Void
 
-class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
+class CollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var items = [AnyObject]()
     var cellIdentifier = ""
@@ -42,6 +42,11 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
         let item = self.itemAtIndexPath(indexPath)
         self.configureCellBlock(cell: cell, item: item)
         return cell
+    }
+    
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        return CGSizeMake(collectionView.bounds.size.width, collectionView.bounds.size.height * 0.5)
     }
     
         

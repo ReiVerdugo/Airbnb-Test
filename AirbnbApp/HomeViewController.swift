@@ -24,7 +24,6 @@ class HomeViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setCollection()
         getListings()
     }
     
@@ -52,6 +51,7 @@ class HomeViewController : UIViewController {
                     
                 }
                 self.collectionView.reloadData()
+                self.setCollection()
 
         }
     }
@@ -60,12 +60,18 @@ class HomeViewController : UIViewController {
         
         let configureCell: CollectionViewCellConfigureBlock = {cell,listing in
             let info = (listing as! ListingClass).info
-//            let activityCell = cell as! ListingCell
-            print(info)
+            let cell = cell as! ListingCell
+            cell.listingName.text = info["listing"]["name"].stringValue
+            cell.listingType.text = info["listing"]["property_type"].stringValue
+            let price = info["pricing_quote"]["listing_currency"].stringValue + " " + info["pricing_quote"]["nightly_price"].stringValue
+            cell.price.text = price
+            cell.listingImage.downloadImageFrom(link: info["listing"]["picture_url"].stringValue, contentMode: .ScaleAspectFit)
+
             
         }
         self.collectionDataSource = CollectionViewDataSource(anItems: listings, cellIdentifier: "listingCell", aconfigureCellBlocks: configureCell)
         self.collectionView.dataSource = self.collectionDataSource
+        self.collectionView.delegate = collectionDataSource
         
     }
 

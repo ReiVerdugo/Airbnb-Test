@@ -110,13 +110,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appartment Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pT-Cb-b7C">
                                                     <rect key="frame" x="8" y="148" width="584" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appartment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Im1-vD-Fxs">
                                                     <rect key="frame" x="8" y="171" width="584" height="19"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -152,6 +152,12 @@
                                                 <exclude reference="e87-7V-i2p"/>
                                             </mask>
                                         </variation>
+                                        <connections>
+                                            <outlet property="listingImage" destination="Q54-Tv-u0q" id="co1-zP-ET9"/>
+                                            <outlet property="listingName" destination="4pT-Cb-b7C" id="nwy-yz-ayg"/>
+                                            <outlet property="listingType" destination="Im1-vD-Fxs" id="nI4-6d-Zzx"/>
+                                            <outlet property="price" destination="1Pd-YI-Mfh" id="YKj-Bj-Hhf"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -162,7 +168,15 @@
                             <constraint firstAttribute="trailingMargin" secondItem="IV7-QG-hL7" secondAttribute="trailing" constant="-20" id="8Xi-Pa-97g"/>
                             <constraint firstItem="gob-6f-yvd" firstAttribute="top" secondItem="IV7-QG-hL7" secondAttribute="bottom" id="Nbh-1I-qcE"/>
                             <constraint firstItem="IV7-QG-hL7" firstAttribute="top" secondItem="kUt-Kn-aVb" secondAttribute="bottom" id="eFR-Pb-fl5"/>
+                            <constraint firstItem="IV7-QG-hL7" firstAttribute="centerX" secondItem="ke1-J4-eGR" secondAttribute="centerX" id="qI5-5C-1pO"/>
+                            <constraint firstItem="IV7-QG-hL7" firstAttribute="width" secondItem="ke1-J4-eGR" secondAttribute="width" id="sen-8y-pT4"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2Fw-E2-aXN"/>
+                                <exclude reference="8Xi-Pa-97g"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Listado" id="Ihe-dB-UnV"/>
                     <navigationItem key="navigationItem" id="gs7-zM-b9n"/>

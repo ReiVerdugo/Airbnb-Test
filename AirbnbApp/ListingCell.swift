@@ -10,4 +10,14 @@ import UIKit
 
 class ListingCell: UICollectionViewCell {
     
+    @IBOutlet weak var listingName: UILabel!
+    @IBOutlet weak var listingType: UILabel!
+    @IBOutlet weak var price: UILabel!
+    @IBOutlet weak var listingImage: UIImageView!
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.listingImage.image = nil
+    }
+
 }
