@@ -18,7 +18,7 @@ class LoginView : UIViewController {
         if (FBSDKAccessToken.currentAccessToken() != nil){
             // User is already logged in, do work such as go to next view controller.
             print(FBSDKAccessToken.currentAccessToken().tokenString)
-            
+            self.performSegueWithIdentifier("login", sender: nil)
         }
     }
     

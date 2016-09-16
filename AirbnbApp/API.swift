@@ -3,7 +3,7 @@
 //  Applicant Test
 //
 //  Created by devstn5 on 2016-08-24.
-//  Copyright © 2016 KogiMobile. All rights reserved.
+//  Copyright © 2016 NextDots. All rights reserved.
 //
 // Here we use Alamofire's library to create and set the URL and HTTP Requests.
 
@@ -24,21 +24,22 @@ extension NSURLRequest {
 
 enum Router : URLRequestConvertible {
     // base URL to make requests
-    static var baseURLString = "https://api.spotify.com/v1/"
+    static var baseURLString = "https://api.airbnb.com/v2/"
     static var location: String?
+    static var parameters = []
     
     // Requests
-    case getArtists([String : AnyObject])
-    case getAlbums(String)
+    case getListings([String : AnyObject])
+    case getListingInfo([String : AnyObject])
     
     // Requests methods
     var method: Alamofire.Method {
         switch self {
             
-        case .getArtists:
+        case .getListings:
             return .GET
             
-        case .getAlbums:
+        case .getListingInfo:
             return .GET
         }
     }
@@ -47,11 +48,11 @@ enum Router : URLRequestConvertible {
     var path: String {
         switch self {
     
-        case .getArtists:
-            return "search"
+        case .getListings:
+            return "search_results"
         
-        case .getAlbums(let artistId):
-            return "artists/\(artistId)/albums"
+        case .getListingInfo(let listingId):
+            return "listings/\(listingId)"
         }
     }
     
@@ -70,7 +71,10 @@ enum Router : URLRequestConvertible {
         
         switch self {
             
-        case .getArtists(let parameters):
+        case .getListings(let parameters):
+            return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
+            
+        case .getListingInfo(let parameters):
             return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
             
         default:
