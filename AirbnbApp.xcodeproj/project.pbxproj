@@ -10,6 +10,7 @@
 		0F1664821D8B854D00FC30E9 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1664811D8B854D00FC30E9 /* CollectionViewDataSource.swift */; };
 		0F1664841D8B876D00FC30E9 /* ListingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1664831D8B876D00FC30E9 /* ListingCell.swift */; };
 		0F7756FD1D8B9B1D00140DF6 /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7756FC1D8B9B1D00140DF6 /* ViewControllerExtension.swift */; };
+		0F7B8D2E1D8E181800DB61CA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B8D2D1D8E181800DB61CA /* DetailView.swift */; };
 		1B734E9199A1D38A87D1F2C7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944E24125F62145C6B1710BC /* Pods.framework */; };
 		73B72B061D8C49F1008A7B67 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B72B051D8C49F1008A7B67 /* ProfileViewController.swift */; };
 		73B72B091D8C61C2008A7B67 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B72B081D8C61C2008A7B67 /* MapViewController.swift */; };
@@ -31,6 +32,7 @@
 		0F1664811D8B854D00FC30E9 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		0F1664831D8B876D00FC30E9 /* ListingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingCell.swift; sourceTree = "<group>"; };
 		0F7756FC1D8B9B1D00140DF6 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		0F7B8D2D1D8E181800DB61CA /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		30A5EA098C33DBC5BD8E484C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		73B72B051D8C49F1008A7B67 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		73B72B081D8C61C2008A7B67 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				0F1664831D8B876D00FC30E9 /* ListingCell.swift */,
 				73B72B051D8C49F1008A7B67 /* ProfileViewController.swift */,
 				0F1664811D8B854D00FC30E9 /* CollectionViewDataSource.swift */,
+				0F7B8D2D1D8E181800DB61CA /* DetailView.swift */,
 				73C42F7B1D8AC8CB0041D769 /* Main.storyboard */,
 				73C42F951D8AD28A0041D769 /* airbnb-logo.png */,
 				73C42F811D8AC8CB0041D769 /* Assets.xcassets */,
@@ -260,6 +263,7 @@
 				73C42FA21D8ADFFB0041D769 /* CoreLocationController.swift in Sources */,
 				73C42F801D8AC8CB0041D769 /* AirbnbApp.xcdatamodeld in Sources */,
 				0F1664841D8B876D00FC30E9 /* ListingCell.swift in Sources */,
+				0F7B8D2E1D8E181800DB61CA /* DetailView.swift in Sources */,
 				73C42F7A1D8AC8CB0041D769 /* ViewController.swift in Sources */,
 				73C42F781D8AC8CB0041D769 /* AppDelegate.swift in Sources */,
 				0F1664821D8B854D00FC30E9 /* CollectionViewDataSource.swift in Sources */,

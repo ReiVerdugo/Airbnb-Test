@@ -76,9 +76,7 @@ enum Router : URLRequestConvertible {
             
         case .getListingInfo(let parameters):
             return Alamofire.ParameterEncoding.URL.encode(mutableURLRequest, parameters: parameters).0
-            
-        default:
-            return mutableURLRequest
+
         }
         
     }

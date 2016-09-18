@@ -26,6 +26,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setNavBar(NSLocalizedString("Mapa", comment: ""))
         self.mapView.delegate = self
         let geocoder = GMSGeocoder()
         geocoder.reverseGeocodeCoordinate((CoreLocationController.sharedInstance.locationManager.location?.coordinate)!, completionHandler: {
