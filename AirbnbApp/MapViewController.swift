@@ -63,14 +63,21 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                         // Locations
                         var locationMarker: GMSMarker!
                         let locpin = CLLocationCoordinate2D(latitude: Double(listing["listing"]["lat"].stringValue)!, longitude: Double(listing["listing"]["lng"].stringValue)!)
-                        print(locpin)
                         self.locations.append(locpin)
                         self.points.addCoordinate(locpin)
                         
                         locationMarker = GMSMarker(position: locpin)
                         locationMarker.title = listing["listing"]["name"].stringValue
                         locationMarker.snippet = listing["pricing_quote"]["listing_currency"].stringValue + " " + listing["pricing_quote"]["nightly_price"].stringValue
-
+                        
+                        if listing["listing"]["property_type"].stringValue == "Apartment" {
+                            locationMarker.icon = UIImage(named: "apartment-icon")
+                        } else if listing["listing"]["property_type"].stringValue == "House" {
+                            locationMarker.icon = UIImage(named: "house-icon")
+                        } else {
+                            locationMarker.icon = UIImage(named: "bed-icon")
+                        }
+                        
                         self.markers.insert(locationMarker)
 
                     }

@@ -611,9 +611,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="ThS-tR-QQg" kind="relationship" relationship="viewControllers" id="i81-tD-lya"/>
-                        <segue destination="OZz-ci-1Z0" kind="relationship" relationship="viewControllers" id="bAd-ik-4pU"/>
                         <segue destination="dPf-ai-aCm" kind="relationship" relationship="viewControllers" id="7Bs-DA-IQ1"/>
+                        <segue destination="ThS-tR-QQg" kind="relationship" relationship="viewControllers" id="d2x-g0-fJD"/>
+                        <segue destination="OZz-ci-1Z0" kind="relationship" relationship="viewControllers" id="oop-l1-40g"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ghS-Oy-zdZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -624,7 +624,7 @@
         <scene sceneID="mIP-X9-SSb">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dPf-ai-aCm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Perfil" id="4XG-cg-x4U"/>
+                    <tabBarItem key="tabBarItem" title="Perfil" image="icon-user.png" id="4XG-cg-x4U"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="J7p-bB-8B3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -643,7 +643,7 @@
         <scene sceneID="s5O-jX-dCN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ThS-tR-QQg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Listado" id="Ihe-dB-UnV"/>
+                    <tabBarItem key="tabBarItem" title="Listado" image="icon-list.png" id="Ihe-dB-UnV"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="HeH-Nx-UsU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -662,7 +662,7 @@
         <scene sceneID="S7e-Gv-vIY">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OZz-ci-1Z0" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Mapa" id="fyl-jg-5ty"/>
+                    <tabBarItem key="tabBarItem" title="Mapa" image="icon-map.png" id="fyl-jg-5ty"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Er0-mS-Eak">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -680,5 +680,8 @@
     </scenes>
     <resources>
         <image name="airbnb-logo.png" width="250" height="250"/>
+        <image name="icon-list.png" width="22" height="22"/>
+        <image name="icon-map.png" width="22" height="22"/>
+        <image name="icon-user.png" width="22" height="22"/>
     </resources>
 </document>
