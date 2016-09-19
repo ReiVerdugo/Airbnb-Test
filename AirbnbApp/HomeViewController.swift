@@ -25,6 +25,12 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
     var collectionDataSource = CollectionViewDataSource()
     var selectedListingId = ""
     var currentCity = ""
+    var favoritesDictionary : [String] = []
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        initDictionary()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +79,6 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
         
         let configureCell: CollectionViewCellConfigureBlock = {cell,listing in
             let info = (listing as! ListingClass).info
-            print(info)
             let cell = cell as! ListingCell
             cell.listingName.text = info["listing"]["name"].stringValue
             cell.listingType.text = info["listing"]["property_type"].stringValue
@@ -81,13 +86,15 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
             cell.price.text = price
             cell.listingImage.downloadImageFrom(link: info["listing"]["picture_url"].stringValue, contentMode: .ScaleAspectFit)
             cell.buttonProtocol = self
-//            self.collectionView.indexPathForCell(cell)
-//            if cell.likeSelected {
-//                cell.likeButton.setImage(UIImage(named: "like-selected"), forState: .Normal)
-//            } else {
-//                cell.likeButton.setImage(UIImage(named: "like"), forState: .Normal)
-//            }
-//            print(cell.likeSelected)
+            
+            // Set favorite icon accordinly
+            if self.favoritesDictionary.contains(info["listing"]["id"].stringValue) {
+                cell.likeButton.setImage(UIImage(named: "like-selected"), forState: .Normal)
+                cell.likeSelected = true
+            } else {
+                cell.likeButton.setImage(UIImage(named: "like"), forState: .Normal)
+                cell.likeSelected = false
+            }
             
         }
         self.collectionDataSource = CollectionViewDataSource(anItems: listings, cellIdentifier: "listingCell", aconfigureCellBlocks: configureCell)
@@ -167,6 +174,7 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
                 do {
                     try managedContext.save()
                     cell.likeButton.setImage(UIImage(named: "like"), forState: .Normal)
+                    self.favoritesDictionary.append(id)
                 } catch let error as NSError {
                     print("Could not save  \(error), \(error.userInfo)")
                 }
@@ -177,6 +185,29 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
             }
 
         }
+    }
+    
+    func initDictionary () {
+        self.favoritesDictionary.removeAll()
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "Housing")
+        do {
+            let results =
+                try managedContext.executeFetchRequest(fetchRequest)
+            let favorites = results as! [NSManagedObject]
+            for favorite in favorites {
+                let id = favorite.valueForKey("id") as! String
+                self.favoritesDictionary.append(id)
+                
+            }
+            self.collectionView.reloadData()
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+
+
     }
     
 }
