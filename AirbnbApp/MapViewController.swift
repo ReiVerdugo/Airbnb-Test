@@ -40,6 +40,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
     func getListings () {
+        SVProgressHUD.showWithStatus(NSLocalizedString("Cargando alojamientos", comment: ""))
         let parameters : [String: AnyObject] = [
             "client_id" : "3092nxybyb0otqw18e8nh5nty",
             "_limit" : limit,
@@ -88,9 +89,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                     print(response.debugDescription)
                     
                 }
-                
-                
-                
+                SVProgressHUD.dismiss()
         }
     }
     // Move the camera to see all the markers added

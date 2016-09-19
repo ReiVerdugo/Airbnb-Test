@@ -591,16 +591,31 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ir a mis favoritos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KrQ-Nh-snf">
-                                                    <rect key="frame" x="23" y="12" width="126" height="20"/>
+                                                    <rect key="frame" x="58" y="12" width="126" height="20"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like.png" translatesAutoresizingMaskIntoConstraints="NO" id="Xtp-rw-bDU">
+                                                    <rect key="frame" x="18" y="9" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="Xtp-rw-bDU" secondAttribute="height" multiplier="1:1" id="PaD-at-Zrj"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="KrQ-Nh-snf" firstAttribute="leading" secondItem="Xtp-rw-bDU" secondAttribute="trailing" constant="15" id="JCO-L9-TeP"/>
+                                                <constraint firstItem="Xtp-rw-bDU" firstAttribute="height" secondItem="GZJ-WB-i1J" secondAttribute="height" multiplier="0.6" id="d7b-NA-iDS"/>
                                                 <constraint firstItem="KrQ-Nh-snf" firstAttribute="centerY" secondItem="GZJ-WB-i1J" secondAttribute="centerY" id="fIv-l3-2WF"/>
+                                                <constraint firstItem="Xtp-rw-bDU" firstAttribute="leading" secondItem="GZJ-WB-i1J" secondAttribute="leadingMargin" constant="10" id="rXh-Pd-JQv"/>
+                                                <constraint firstItem="Xtp-rw-bDU" firstAttribute="centerY" secondItem="GZJ-WB-i1J" secondAttribute="centerY" id="t8p-9R-Uly"/>
                                                 <constraint firstItem="KrQ-Nh-snf" firstAttribute="leading" secondItem="GZJ-WB-i1J" secondAttribute="leadingMargin" constant="15" id="w0U-ZU-mf2"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="w0U-ZU-mf2"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="hY6-Uj-YUe" kind="show" id="Yl7-Zw-RcA"/>

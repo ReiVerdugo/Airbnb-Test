@@ -11,6 +11,7 @@ import Alamofire
 import SVProgressHUD
 import SwiftyJSON
 import CoreData
+import GoogleMaps
 
 class ListingClass {
     var info : JSON = []
@@ -23,24 +24,35 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
     var listings = [ListingClass]()
     var collectionDataSource = CollectionViewDataSource()
     var selectedListingId = ""
+    var currentCity = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavBar(NSLocalizedString("Listado", comment: ""))
-        getListings()
+        let geocoder = GMSGeocoder()
+        geocoder.reverseGeocodeCoordinate((CoreLocationController.sharedInstance.locationManager.location?.coordinate)!, completionHandler: {
+            (response, error) -> Void in
+            let throughfare = (response?.firstResult()!.thoroughfare!)!
+            let city = (response?.firstResult()!.locality!)!
+            self.currentCity = throughfare + " " + city
+            self.getListings()
+        })
     }
     
     func getListings () {
+        SVProgressHUD.showWithStatus(NSLocalizedString("Cargando alojamientos", comment: ""))
         let parameters : [String: AnyObject] = [
             "client_id" : "3092nxybyb0otqw18e8nh5nty",
-            "_limit" : limit
+            "_limit" : limit,
+            "location" : self.currentCity,
+            "user_lat" : (CoreLocationController.sharedInstance.locationManager.location?.coordinate.latitude)!,
+            "user_lng" : (CoreLocationController.sharedInstance.locationManager.location?.coordinate.longitude)!
         ]
         Alamofire.request(Router.getListings(parameters))
             .validate()
             .responseJSON { response in
                 
                 if response.result.isSuccess {
-//                    SVProgressHUD.showSuccessWithStatus("Artists found")
                     let listingInfo = JSON(response.result.value!)["search_results"].arrayValue
                     for listing in listingInfo {
                         let list = ListingClass()
@@ -48,13 +60,12 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
                         self.listings.append(list)
                     }
                 }else{
-//                    SVProgressHUD.showErrorWithStatus("Error. Please try again")
                     print(response.debugDescription)
                     
                 }
                 self.collectionView.reloadData()
                 self.setCollection()
-
+                SVProgressHUD.dismiss()
         }
     }
     
@@ -100,16 +111,17 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
     
     func saveFavorite(cell: ListingCell) {
         cell.likeSelected = !cell.likeSelected
+        let indexPath = self.collectionView.indexPathForCell(cell)
+        let info = self.listings[indexPath!.row].info
+        let appDelegate =
+            UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        // Add to favorites
         if cell.likeSelected {
-            let indexPath = self.collectionView.indexPathForCell(cell)
-            let info = self.listings[indexPath!.row].info
-            let appDelegate =
-                UIApplication.sharedApplication().delegate as! AppDelegate
-            let managedContext = appDelegate.managedObjectContext
-            //2
+            
             let entity =  NSEntityDescription.entityForName("Housing",
                                                             inManagedObjectContext:managedContext)
-            
             let listing = NSManagedObject(entity: entity!,
                                          insertIntoManagedObjectContext: managedContext)
             listing.setValue(info["listing"]["name"].stringValue, forKey: "name")
@@ -128,7 +140,7 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
             let imageData = UIImagePNGRepresentation(cell.listingImage.image!);
             listing.setValue(imageData, forKey: "image")
             
-            //4
+            // Save in context
             do {
                 try managedContext.save()
                 //5
@@ -137,8 +149,33 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
                 print("Could not save \(error), \(error.userInfo)")
             }
 
+        // Remove from favorites
         } else {
-            cell.likeButton.setImage(UIImage(named: "like"), forState: .Normal)
+            let request = NSFetchRequest(entityName: "Housing")
+            request.returnsObjectsAsFaults = false;
+            let id = info["listing"]["id"].stringValue
+            let resultPredicate = NSPredicate(format: "id = %@", id)
+            request.predicate = resultPredicate
+            do {
+                // Fetch result
+                let result =
+                    try managedContext.executeFetchRequest(request)[0]
+                
+                managedContext.deleteObject(result as! NSManagedObject)
+                
+                // Save deletion
+                do {
+                    try managedContext.save()
+                    cell.likeButton.setImage(UIImage(named: "like"), forState: .Normal)
+                } catch let error as NSError {
+                    print("Could not save  \(error), \(error.userInfo)")
+                }
+                
+                
+            } catch let error as NSError {
+                print("Could not fetch \(error), \(error.userInfo)")
+            }
+
         }
     }
     
