@@ -32,7 +32,7 @@
 		0F1664811D8B854D00FC30E9 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		0F1664831D8B876D00FC30E9 /* ListingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListingCell.swift; sourceTree = "<group>"; };
 		0F7756FC1D8B9B1D00140DF6 /* ViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
-		0F7B8D2D1D8E181800DB61CA /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		0F7B8D2D1D8E181800DB61CA /* DetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		30A5EA098C33DBC5BD8E484C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		73B72B051D8C49F1008A7B67 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		73B72B081D8C61C2008A7B67 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +87,7 @@
 		73B72B071D8C6191008A7B67 /* GlobalResources */ = {
 			isa = PBXGroup;
 			children = (
+				73C42FA11D8ADFFB0041D769 /* CoreLocationController.swift */,
 				73C42FA31D8AE0630041D769 /* API.swift */,
 				0F7756FC1D8B9B1D00140DF6 /* ViewControllerExtension.swift */,
 				73C42FA51D8AE1170041D769 /* GlobalVars.swift */,
@@ -119,11 +120,10 @@
 				73C42F771D8AC8CB0041D769 /* AppDelegate.swift */,
 				73B72B071D8C6191008A7B67 /* GlobalResources */,
 				73C42FA71D8AEAFD0041D769 /* LoginView.swift */,
-				73C42FA91D8AF03F0041D769 /* HomeViewController.swift */,
-				73B72B081D8C61C2008A7B67 /* MapViewController.swift */,
-				73C42FA11D8ADFFB0041D769 /* CoreLocationController.swift */,
-				0F1664831D8B876D00FC30E9 /* ListingCell.swift */,
 				73B72B051D8C49F1008A7B67 /* ProfileViewController.swift */,
+				73C42FA91D8AF03F0041D769 /* HomeViewController.swift */,
+				0F1664831D8B876D00FC30E9 /* ListingCell.swift */,
+				73B72B081D8C61C2008A7B67 /* MapViewController.swift */,
 				0F1664811D8B854D00FC30E9 /* CollectionViewDataSource.swift */,
 				0F7B8D2D1D8E181800DB61CA /* DetailView.swift */,
 				73C42F7B1D8AC8CB0041D769 /* Main.storyboard */,

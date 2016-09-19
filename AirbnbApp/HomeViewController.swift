@@ -21,6 +21,7 @@ class HomeViewController : UIViewController {
     var limit = 30
     var listings = [ListingClass]()
     var collectionDataSource = CollectionViewDataSource()
+    var selectedListingId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,6 +61,7 @@ class HomeViewController : UIViewController {
         
         let configureCell: CollectionViewCellConfigureBlock = {cell,listing in
             let info = (listing as! ListingClass).info
+            print(info)
             let cell = cell as! ListingCell
             cell.listingName.text = info["listing"]["name"].stringValue
             cell.listingType.text = info["listing"]["property_type"].stringValue
@@ -70,9 +72,22 @@ class HomeViewController : UIViewController {
             
         }
         self.collectionDataSource = CollectionViewDataSource(anItems: listings, cellIdentifier: "listingCell", aconfigureCellBlocks: configureCell)
+        self.collectionDataSource.didSelectBlock = {indexPath in self.didSelect(indexPath)}
         self.collectionView.dataSource = self.collectionDataSource
         self.collectionView.delegate = collectionDataSource
         
+    }
+    
+    func didSelect (indexPath : NSIndexPath) {
+        selectedListingId = listings[indexPath.row].info["listing"]["id"].stringValue
+        self.performSegueWithIdentifier("detail", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detail" {
+            let nextController = segue.destinationViewController as! DetailView
+            nextController.listingID = selectedListingId
+        }
     }
 
     

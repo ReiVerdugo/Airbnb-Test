@@ -10,11 +10,14 @@ import UIKit
 
 typealias CollectionViewCellConfigureBlock = (cell: AnyObject, item: AnyObject) -> Void
 
+typealias DidSelectCellBlock = (indexPath : NSIndexPath) -> Void
+
 class CollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var items = [AnyObject]()
     var cellIdentifier = ""
     var configureCellBlock: CollectionViewCellConfigureBlock = {_,_ in }
+    var didSelectBlock : DidSelectCellBlock = {_ in }
     
     override init() {
         super.init()
@@ -49,7 +52,9 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollecti
         return CGSizeMake(collectionView.bounds.size.width, collectionView.bounds.size.height * 0.5)
     }
     
-        
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        self.didSelectBlock(indexPath: indexPath)
+    }
     
 
 }

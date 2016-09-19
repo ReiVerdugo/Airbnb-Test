@@ -51,8 +51,8 @@ enum Router : URLRequestConvertible {
         case .getListings:
             return "search_results"
         
-        case .getListingInfo(let listingId):
-            return "listings/\(listingId)"
+        case .getListingInfo:
+            return "listings/\(Router.parameters[0])"
         }
     }
     
