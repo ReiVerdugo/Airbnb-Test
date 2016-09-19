@@ -10,6 +10,7 @@ import UIKit
 import GoogleMaps
 import Alamofire
 import SwiftyJSON
+import CoreData
 
 class DetailView: UIViewController, GMSMapViewDelegate {
 
@@ -32,13 +33,18 @@ class DetailView: UIViewController, GMSMapViewDelegate {
     var locations : [CLLocationCoordinate2D] = []
     var points : GMSMutablePath = GMSMutablePath()
     var markers : Set<GMSMarker> = []
-
+    var fromFavorites = false
+    var currentFavorite : NSManagedObject? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.mapView.delegate = self
         setNavBar(NSLocalizedString("Detalle", comment: ""))
-        getDetail()
+        if fromFavorites {
+            initFavorite()
+        } else {
+          getDetail()
+        }
     }
     
     func getDetail () {
@@ -79,7 +85,6 @@ class DetailView: UIViewController, GMSMapViewDelegate {
         self.listingView.downloadImageFrom(link: info["picture_url"].stringValue, contentMode: .ScaleAspectFit)
         // Location
         let locpin = CLLocationCoordinate2D(latitude: Double(info["lat"].stringValue)!, longitude: Double(info["lng"].stringValue)!)
-        print(locpin)
         self.locations.append(locpin)
         self.points.addCoordinate(locpin)
         let locationMarker = GMSMarker(position: locpin)
@@ -105,7 +110,33 @@ class DetailView: UIViewController, GMSMapViewDelegate {
         }
         
     }
-
-
-   
+    
+    func initFavorite () {
+        if let info = currentFavorite {
+            self.listingName.text = info.valueForKey("name") as? String
+            self.listingType.text = info.valueForKey("type") as? String
+            self.bedroomType.text = info.valueForKey("roomType") as? String
+            self.numberOfGuests.text = info.valueForKey("guests") as? String
+            self.numberOfBedrooms.text = info.valueForKey("bedrooms") as? String
+            self.numberOfBeds.text = info.valueForKey("beds") as? String
+            self.numberOfBathrooms.text = info.valueForKey("bathrooms") as? String
+            self.listingDescription.text = ""
+            self.listingAddress.text = info.valueForKey("address") as? String
+            self.price.text = info.valueForKey("price") as? String
+            let imageData = info.valueForKey("image") as? NSData
+            self.listingView.image = UIImage(data: imageData!)
+            
+            // Location
+            let locpin = CLLocationCoordinate2D(latitude: Double(info.valueForKey("lat") as! String)!, longitude: Double(info.valueForKey("lng") as! String)!)
+            self.locations.append(locpin)
+            self.points.addCoordinate(locpin)
+            let locationMarker = GMSMarker(position: locpin)
+            locationMarker.title = info.valueForKey("name") as? String
+            locationMarker.snippet = info.valueForKey("price") as? String
+            self.markers.insert(locationMarker)
+            
+            self.drawMarkers()
+            self.setUpMap()
+        }
+    }
 }

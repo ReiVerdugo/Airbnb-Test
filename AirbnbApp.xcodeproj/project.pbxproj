@@ -22,6 +22,7 @@
 		1B734E9199A1D38A87D1F2C7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944E24125F62145C6B1710BC /* Pods.framework */; };
 		73B72B061D8C49F1008A7B67 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B72B051D8C49F1008A7B67 /* ProfileViewController.swift */; };
 		73B72B091D8C61C2008A7B67 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B72B081D8C61C2008A7B67 /* MapViewController.swift */; };
+		73BA381D1D90253200329BFE /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA381C1D90253200329BFE /* FavoritesView.swift */; };
 		73C42F781D8AC8CB0041D769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C42F771D8AC8CB0041D769 /* AppDelegate.swift */; };
 		73C42F7A1D8AC8CB0041D769 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C42F791D8AC8CB0041D769 /* ViewController.swift */; };
 		73C42F7D1D8AC8CB0041D769 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C42F7B1D8AC8CB0041D769 /* Main.storyboard */; };
@@ -52,6 +53,7 @@
 		30A5EA098C33DBC5BD8E484C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		73B72B051D8C49F1008A7B67 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		73B72B081D8C61C2008A7B67 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		73BA381C1D90253200329BFE /* FavoritesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		73C42F741D8AC8CB0041D769 /* AirbnbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73C42F771D8AC8CB0041D769 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73C42F791D8AC8CB0041D769 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +114,20 @@
 			name = GlobalResources;
 			sourceTree = "<group>";
 		};
+		73BA381B1D90140D00329BFE /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				0F7C38EC1D8F807A00AE7E81 /* house-icon.png */,
+				0F7C38ED1D8F807A00AE7E81 /* bed-icon.png */,
+				0F7C38F11D8F84A900AE7E81 /* icon-user.png */,
+				0F7C38F21D8F84AA00AE7E81 /* icon-map.png */,
+				0F7C38F31D8F84AA00AE7E81 /* icon-list.png */,
+				0F7C38F71D8F87DB00AE7E81 /* like-selected.png */,
+				0F7C38F81D8F87DB00AE7E81 /* like.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		73C42F6B1D8AC8CB0041D769 = {
 			isa = PBXGroup;
 			children = (
@@ -142,14 +158,9 @@
 				73B72B081D8C61C2008A7B67 /* MapViewController.swift */,
 				0F1664811D8B854D00FC30E9 /* CollectionViewDataSource.swift */,
 				0F7B8D2D1D8E181800DB61CA /* DetailView.swift */,
+				73BA381C1D90253200329BFE /* FavoritesView.swift */,
 				0F7C38EB1D8F807A00AE7E81 /* apartment-icon.png */,
-				0F7C38EC1D8F807A00AE7E81 /* house-icon.png */,
-				0F7C38ED1D8F807A00AE7E81 /* bed-icon.png */,
-				0F7C38F11D8F84A900AE7E81 /* icon-user.png */,
-				0F7C38F21D8F84AA00AE7E81 /* icon-map.png */,
-				0F7C38F31D8F84AA00AE7E81 /* icon-list.png */,
-				0F7C38F71D8F87DB00AE7E81 /* like-selected.png */,
-				0F7C38F81D8F87DB00AE7E81 /* like.png */,
+				73BA381B1D90140D00329BFE /* Images */,
 				73C42F7B1D8AC8CB0041D769 /* Main.storyboard */,
 				73C42F951D8AD28A0041D769 /* airbnb-logo.png */,
 				73C42F811D8AC8CB0041D769 /* Assets.xcassets */,
@@ -297,6 +308,7 @@
 				0F1664841D8B876D00FC30E9 /* ListingCell.swift in Sources */,
 				0F7B8D2E1D8E181800DB61CA /* DetailView.swift in Sources */,
 				73C42F7A1D8AC8CB0041D769 /* ViewController.swift in Sources */,
+				73BA381D1D90253200329BFE /* FavoritesView.swift in Sources */,
 				73C42F781D8AC8CB0041D769 /* AppDelegate.swift in Sources */,
 				0F1664821D8B854D00FC30E9 /* CollectionViewDataSource.swift in Sources */,
 				73B72B091D8C61C2008A7B67 /* MapViewController.swift in Sources */,

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -107,7 +107,7 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appartment Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pT-Cb-b7C">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appartment Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4pT-Cb-b7C">
                                                     <rect key="frame" x="8" y="148" width="584" height="21"/>
                                                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -243,7 +243,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appartment Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xi-MC-0M2">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appartment Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Xi-MC-0M2">
                                                 <rect key="frame" x="8" y="215" width="584" height="21"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -270,13 +270,13 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Guests" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEH-j5-tq7">
                                                                 <rect key="frame" x="48" y="0.0" width="54" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0l-9K-U03">
                                                                 <rect key="frame" x="69" y="21" width="12" height="24"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -294,13 +294,13 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bedrooms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cc0-J9-MUA">
                                                                 <rect key="frame" x="36" y="0.0" width="79" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cvw-RE-oqP">
                                                                 <rect key="frame" x="70" y="21" width="12" height="24"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -318,13 +318,13 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Beds" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IF6-iL-hgv">
                                                                 <rect key="frame" x="56" y="0.0" width="39" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCt-se-CJf">
                                                                 <rect key="frame" x="70" y="21" width="12" height="24"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -342,13 +342,13 @@
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bathrooms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vtz-wv-RE0">
                                                                 <rect key="frame" x="33" y="0.0" width="84" height="21"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RxK-B8-rPc">
                                                                 <rect key="frame" x="69" y="21" width="12" height="24"/>
                                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
@@ -372,7 +372,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9cq-HX-1ET">
                                                 <rect key="frame" x="8" y="368" width="584" height="18"/>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VlT-CT-FEX" customClass="GMSMapView">
@@ -602,6 +602,9 @@
                                                 <constraint firstItem="KrQ-Nh-snf" firstAttribute="leading" secondItem="GZJ-WB-i1J" secondAttribute="leadingMargin" constant="15" id="w0U-ZU-mf2"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="hY6-Uj-YUe" kind="show" id="Yl7-Zw-RcA"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -621,6 +624,141 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="we4-TD-B1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2549" y="1192"/>
+        </scene>
+        <!--Favorites View-->
+        <scene sceneID="Adp-Vv-29s">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="hY6-Uj-YUe" customClass="FavoritesView" customModule="AirbnbApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="J3b-yS-aOR"/>
+                        <viewControllerLayoutGuide type="bottom" id="8W0-Uo-1ml"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pH9-qW-rBt">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Wz6-bl-VGu">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="E50-uf-e5z">
+                                    <size key="itemSize" width="600" height="200"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="listingCell" id="yjn-lv-QsU" customClass="ListingCell" customModule="AirbnbApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4gn-VU-20C">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
+                                                </imageView>
+                                                <view alpha="0.60000002384185791" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T85-Jc-cLq">
+                                                    <rect key="frame" x="0.0" y="102" width="180" height="31"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfM-Ou-XTF">
+                                                    <rect key="frame" x="13" y="106" width="149" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appartment Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1DE-Im-1ao">
+                                                    <rect key="frame" x="8" y="148" width="584" height="21"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Appartment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zuG-Nk-8Ys">
+                                                    <rect key="frame" x="8" y="171" width="584" height="19"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PWc-JL-at0">
+                                                    <rect key="frame" x="552" y="125" width="25" height="25"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="PWc-JL-at0" secondAttribute="height" multiplier="1:1" id="W7k-gu-hHQ"/>
+                                                        <constraint firstAttribute="height" constant="25" id="gfg-im-I08"/>
+                                                    </constraints>
+                                                    <state key="normal" image="like.png"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="likeSelected:" destination="yjn-lv-QsU" eventType="touchUpInside" id="qft-1Z-Pph"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="zuG-Nk-8Ys" firstAttribute="bottom" secondItem="yjn-lv-QsU" secondAttribute="bottomMargin" id="0hs-cp-xOx"/>
+                                            <constraint firstItem="zuG-Nk-8Ys" firstAttribute="leading" secondItem="yjn-lv-QsU" secondAttribute="leadingMargin" id="3VR-aJ-Qhx"/>
+                                            <constraint firstItem="zuG-Nk-8Ys" firstAttribute="trailing" secondItem="1DE-Im-1ao" secondAttribute="trailing" id="7Fc-q4-I8X"/>
+                                            <constraint firstItem="zuG-Nk-8Ys" firstAttribute="top" secondItem="1DE-Im-1ao" secondAttribute="bottom" constant="2" id="7y9-iU-xBE"/>
+                                            <constraint firstItem="T85-Jc-cLq" firstAttribute="leading" secondItem="4gn-VU-20C" secondAttribute="leading" id="E50-Lh-5sw"/>
+                                            <constraint firstItem="T85-Jc-cLq" firstAttribute="width" secondItem="4gn-VU-20C" secondAttribute="width" multiplier="0.3" id="FIh-0m-7FV"/>
+                                            <constraint firstItem="pfM-Ou-XTF" firstAttribute="bottom" secondItem="T85-Jc-cLq" secondAttribute="bottom" multiplier="0.95" constant="1" id="GuS-v0-oQv"/>
+                                            <constraint firstItem="T85-Jc-cLq" firstAttribute="height" secondItem="pfM-Ou-XTF" secondAttribute="height" multiplier="1.5" id="GyU-Im-8gS"/>
+                                            <constraint firstItem="1DE-Im-1ao" firstAttribute="leading" secondItem="yjn-lv-QsU" secondAttribute="leadingMargin" id="JTx-PE-wd3"/>
+                                            <constraint firstItem="zuG-Nk-8Ys" firstAttribute="top" secondItem="1DE-Im-1ao" secondAttribute="bottom" constant="8" symbolic="YES" id="LBX-g3-8AS"/>
+                                            <constraint firstItem="zuG-Nk-8Ys" firstAttribute="leading" secondItem="1DE-Im-1ao" secondAttribute="leading" id="Ld0-ft-65U"/>
+                                            <constraint firstItem="4gn-VU-20C" firstAttribute="top" secondItem="yjn-lv-QsU" secondAttribute="topMargin" constant="-8" id="Lpe-dg-xr5"/>
+                                            <constraint firstItem="4gn-VU-20C" firstAttribute="height" secondItem="yjn-lv-QsU" secondAttribute="height" multiplier="0.7" id="QFp-FE-oTf"/>
+                                            <constraint firstItem="pfM-Ou-XTF" firstAttribute="trailing" secondItem="T85-Jc-cLq" secondAttribute="trailing" multiplier="0.9" id="Ruc-uJ-VGE"/>
+                                            <constraint firstItem="4gn-VU-20C" firstAttribute="width" secondItem="yjn-lv-QsU" secondAttribute="width" id="TX2-lB-G7j"/>
+                                            <constraint firstItem="4gn-VU-20C" firstAttribute="centerX" secondItem="yjn-lv-QsU" secondAttribute="centerX" id="XRY-fi-FdO"/>
+                                            <constraint firstItem="1DE-Im-1ao" firstAttribute="width" secondItem="yjn-lv-QsU" secondAttribute="width" multiplier="0.9" id="fQf-VF-CWP"/>
+                                            <constraint firstItem="1DE-Im-1ao" firstAttribute="top" secondItem="4gn-VU-20C" secondAttribute="bottom" constant="8" id="g8T-XP-25h"/>
+                                            <constraint firstItem="pfM-Ou-XTF" firstAttribute="leading" secondItem="yjn-lv-QsU" secondAttribute="leadingMargin" constant="5" id="h1Q-Bn-Gyy"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="PWc-JL-at0" secondAttribute="trailing" constant="15" id="i1d-p7-tIw"/>
+                                            <constraint firstItem="T85-Jc-cLq" firstAttribute="bottom" secondItem="4gn-VU-20C" secondAttribute="bottom" multiplier="0.95" id="k1p-Xc-oHf"/>
+                                            <constraint firstItem="PWc-JL-at0" firstAttribute="top" secondItem="4gn-VU-20C" secondAttribute="bottom" constant="-15" id="o7i-6F-Rtl"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="1DE-Im-1ao" secondAttribute="trailing" id="tQr-Qd-BZf"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="fQf-VF-CWP"/>
+                                                <exclude reference="0hs-cp-xOx"/>
+                                                <exclude reference="LBX-g3-8AS"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="likeButton" destination="PWc-JL-at0" id="XLy-TB-dAn"/>
+                                            <outlet property="listingImage" destination="4gn-VU-20C" id="r2n-8I-scb"/>
+                                            <outlet property="listingName" destination="1DE-Im-1ao" id="Nnc-3W-wOl"/>
+                                            <outlet property="listingType" destination="zuG-Nk-8Ys" id="KAj-cl-Thz"/>
+                                            <outlet property="price" destination="pfM-Ou-XTF" id="o8d-AE-9v7"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wz6-bl-VGu" secondAttribute="trailing" constant="-20" id="VDd-Ot-h8u"/>
+                            <constraint firstItem="Wz6-bl-VGu" firstAttribute="top" secondItem="J3b-yS-aOR" secondAttribute="bottom" id="YEV-NX-HsN"/>
+                            <constraint firstItem="Wz6-bl-VGu" firstAttribute="leading" secondItem="pH9-qW-rBt" secondAttribute="leadingMargin" constant="-20" id="e6X-QR-mBJ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Wz6-bl-VGu" secondAttribute="bottom" id="oMu-tv-MLP"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="Wz6-bl-VGu" id="95N-AR-Ktd"/>
+                        <segue destination="Kl0-Eb-37J" kind="show" identifier="detail" id="edj-ao-ZR2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LFd-l8-FIG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3231" y="1192"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="irc-gd-gZs">
@@ -706,4 +844,7 @@
         <image name="icon-user.png" width="22" height="22"/>
         <image name="like.png" width="33" height="33"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="edj-ao-ZR2"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -10,12 +10,13 @@ import UIKit
 import Alamofire
 import SVProgressHUD
 import SwiftyJSON
+import CoreData
 
 class ListingClass {
     var info : JSON = []
 }
 
-class HomeViewController : UIViewController {
+class HomeViewController : UIViewController, SaveInFavoritesProtocol {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var limit = 30
@@ -68,6 +69,8 @@ class HomeViewController : UIViewController {
             let price = info["pricing_quote"]["listing_currency"].stringValue + " " + info["pricing_quote"]["nightly_price"].stringValue
             cell.price.text = price
             cell.listingImage.downloadImageFrom(link: info["listing"]["picture_url"].stringValue, contentMode: .ScaleAspectFit)
+            cell.buttonProtocol = self
+//            self.collectionView.indexPathForCell(cell)
 //            if cell.likeSelected {
 //                cell.likeButton.setImage(UIImage(named: "like-selected"), forState: .Normal)
 //            } else {
@@ -92,6 +95,50 @@ class HomeViewController : UIViewController {
         if segue.identifier == "detail" {
             let nextController = segue.destinationViewController as! DetailView
             nextController.listingID = selectedListingId
+        }
+    }
+    
+    func saveFavorite(cell: ListingCell) {
+        cell.likeSelected = !cell.likeSelected
+        if cell.likeSelected {
+            let indexPath = self.collectionView.indexPathForCell(cell)
+            let info = self.listings[indexPath!.row].info
+            let appDelegate =
+                UIApplication.sharedApplication().delegate as! AppDelegate
+            let managedContext = appDelegate.managedObjectContext
+            //2
+            let entity =  NSEntityDescription.entityForName("Housing",
+                                                            inManagedObjectContext:managedContext)
+            
+            let listing = NSManagedObject(entity: entity!,
+                                         insertIntoManagedObjectContext: managedContext)
+            listing.setValue(info["listing"]["name"].stringValue, forKey: "name")
+            listing.setValue(info["listing"]["id"].stringValue, forKey: "id")
+            listing.setValue(info["listing"]["bathrooms"].stringValue, forKey: "bathrooms")
+            listing.setValue(info["listing"]["public_address"].stringValue, forKey: "address")
+            listing.setValue(info["listing"]["bedrooms"].stringValue, forKey: "bedrooms")
+            listing.setValue(info["listing"]["beds"].stringValue, forKey: "beds")
+            listing.setValue(info["listing"]["person_capacity"].stringValue, forKey: "guests")
+            listing.setValue(info["listing"]["lat"].stringValue, forKey: "lat")
+            listing.setValue(info["listing"]["lng"].stringValue, forKey: "lng")
+            listing.setValue(info["pricing_quote"]["listing_currency"].stringValue + " " + info["pricing_quote"]["nightly_price"].stringValue, forKey: "price")
+            listing.setValue(info["listing"]["property_type"].stringValue, forKey: "type")
+            listing.setValue(info["listing"]["room_type"].stringValue, forKey: "roomType")
+            
+            let imageData = UIImagePNGRepresentation(cell.listingImage.image!);
+            listing.setValue(imageData, forKey: "image")
+            
+            //4
+            do {
+                try managedContext.save()
+                //5
+                cell.likeButton.setImage(UIImage(named: "like-selected"), forState: .Normal)
+            } catch let error as NSError  {
+                print("Could not save \(error), \(error.userInfo)")
+            }
+
+        } else {
+            cell.likeButton.setImage(UIImage(named: "like"), forState: .Normal)
         }
     }
     
