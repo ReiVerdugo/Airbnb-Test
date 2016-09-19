@@ -17,6 +17,8 @@
 		0F7C38F41D8F84AA00AE7E81 /* icon-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7C38F11D8F84A900AE7E81 /* icon-user.png */; };
 		0F7C38F51D8F84AA00AE7E81 /* icon-map.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7C38F21D8F84AA00AE7E81 /* icon-map.png */; };
 		0F7C38F61D8F84AA00AE7E81 /* icon-list.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7C38F31D8F84AA00AE7E81 /* icon-list.png */; };
+		0F7C38F91D8F87DB00AE7E81 /* like-selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7C38F71D8F87DB00AE7E81 /* like-selected.png */; };
+		0F7C38FA1D8F87DB00AE7E81 /* like.png in Resources */ = {isa = PBXBuildFile; fileRef = 0F7C38F81D8F87DB00AE7E81 /* like.png */; };
 		1B734E9199A1D38A87D1F2C7 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944E24125F62145C6B1710BC /* Pods.framework */; };
 		73B72B061D8C49F1008A7B67 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B72B051D8C49F1008A7B67 /* ProfileViewController.swift */; };
 		73B72B091D8C61C2008A7B67 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B72B081D8C61C2008A7B67 /* MapViewController.swift */; };
@@ -45,6 +47,8 @@
 		0F7C38F11D8F84A900AE7E81 /* icon-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-user.png"; sourceTree = "<group>"; };
 		0F7C38F21D8F84AA00AE7E81 /* icon-map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-map.png"; sourceTree = "<group>"; };
 		0F7C38F31D8F84AA00AE7E81 /* icon-list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-list.png"; sourceTree = "<group>"; };
+		0F7C38F71D8F87DB00AE7E81 /* like-selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "like-selected.png"; sourceTree = "<group>"; };
+		0F7C38F81D8F87DB00AE7E81 /* like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = like.png; sourceTree = "<group>"; };
 		30A5EA098C33DBC5BD8E484C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		73B72B051D8C49F1008A7B67 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		73B72B081D8C61C2008A7B67 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				0F7C38F11D8F84A900AE7E81 /* icon-user.png */,
 				0F7C38F21D8F84AA00AE7E81 /* icon-map.png */,
 				0F7C38F31D8F84AA00AE7E81 /* icon-list.png */,
+				0F7C38F71D8F87DB00AE7E81 /* like-selected.png */,
+				0F7C38F81D8F87DB00AE7E81 /* like.png */,
 				73C42F7B1D8AC8CB0041D769 /* Main.storyboard */,
 				73C42F951D8AD28A0041D769 /* airbnb-logo.png */,
 				73C42F811D8AC8CB0041D769 /* Assets.xcassets */,
@@ -218,11 +224,13 @@
 			files = (
 				73C42F851D8AC8CB0041D769 /* LaunchScreen.storyboard in Resources */,
 				73C42F821D8AC8CB0041D769 /* Assets.xcassets in Resources */,
+				0F7C38F91D8F87DB00AE7E81 /* like-selected.png in Resources */,
 				0F7C38F51D8F84AA00AE7E81 /* icon-map.png in Resources */,
 				73C42F961D8AD28A0041D769 /* airbnb-logo.png in Resources */,
 				0F7C38F61D8F84AA00AE7E81 /* icon-list.png in Resources */,
 				0F7C38EF1D8F807A00AE7E81 /* house-icon.png in Resources */,
 				73C42F7D1D8AC8CB0041D769 /* Main.storyboard in Resources */,
+				0F7C38FA1D8F87DB00AE7E81 /* like.png in Resources */,
 				0F7C38F41D8F84AA00AE7E81 /* icon-user.png in Resources */,
 				0F7C38F01D8F807A00AE7E81 /* bed-icon.png in Resources */,
 				0F7C38EE1D8F807A00AE7E81 /* apartment-icon.png in Resources */,

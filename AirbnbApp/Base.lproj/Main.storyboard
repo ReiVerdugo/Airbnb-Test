@@ -119,17 +119,37 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEp-Ha-1Uv">
+                                                    <rect key="frame" x="552" y="125" width="25" height="25"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="7gF-nX-8IH"/>
+                                                        <constraint firstAttribute="width" secondItem="VEp-Ha-1Uv" secondAttribute="height" multiplier="1:1" id="PFQ-ys-x6j"/>
+                                                    </constraints>
+                                                    <state key="normal" image="like.png"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                            <integer key="value" value="10"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="likeSelected:" destination="fNC-vk-8Ph" eventType="touchUpInside" id="wdk-Q3-I1A"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="Q54-Tv-u0q" firstAttribute="height" secondItem="fNC-vk-8Ph" secondAttribute="height" multiplier="0.7" id="0AX-xo-EoH"/>
+                                            <constraint firstItem="VEp-Ha-1Uv" firstAttribute="top" secondItem="Q54-Tv-u0q" secondAttribute="bottom" constant="-15" id="1Pn-c5-jVw"/>
                                             <constraint firstItem="4pT-Cb-b7C" firstAttribute="width" secondItem="fNC-vk-8Ph" secondAttribute="width" multiplier="0.9" id="2NT-WK-Twc"/>
                                             <constraint firstItem="1Pd-YI-Mfh" firstAttribute="bottom" secondItem="Dp2-Uo-IL4" secondAttribute="bottom" multiplier="0.95" constant="1" id="5GV-xv-cfP"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="4pT-Cb-b7C" secondAttribute="trailing" id="79i-dm-8S0"/>
                                             <constraint firstItem="1Pd-YI-Mfh" firstAttribute="trailing" secondItem="Dp2-Uo-IL4" secondAttribute="trailing" multiplier="0.9" id="BuI-Lf-uIc"/>
                                             <constraint firstItem="Im1-vD-Fxs" firstAttribute="leading" secondItem="fNC-vk-8Ph" secondAttribute="leadingMargin" id="D2j-Wz-5Ha"/>
                                             <constraint firstItem="4pT-Cb-b7C" firstAttribute="leading" secondItem="fNC-vk-8Ph" secondAttribute="leadingMargin" id="HpY-gh-OBb"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="VEp-Ha-1Uv" secondAttribute="trailing" constant="15" id="Nbb-Bm-eM8"/>
                                             <constraint firstItem="Q54-Tv-u0q" firstAttribute="top" secondItem="fNC-vk-8Ph" secondAttribute="topMargin" constant="-8" id="T1a-zS-9De"/>
                                             <constraint firstItem="4pT-Cb-b7C" firstAttribute="top" secondItem="Q54-Tv-u0q" secondAttribute="bottom" constant="8" id="TOc-MS-Le1"/>
                                             <constraint firstItem="Im1-vD-Fxs" firstAttribute="leading" secondItem="4pT-Cb-b7C" secondAttribute="leading" id="W2y-tD-kh5"/>
@@ -153,6 +173,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
+                                            <outlet property="likeButton" destination="VEp-Ha-1Uv" id="vYu-e0-5Ze"/>
                                             <outlet property="listingImage" destination="Q54-Tv-u0q" id="co1-zP-ET9"/>
                                             <outlet property="listingName" destination="4pT-Cb-b7C" id="nwy-yz-ayg"/>
                                             <outlet property="listingType" destination="Im1-vD-Fxs" id="nI4-6d-Zzx"/>
@@ -683,5 +704,6 @@
         <image name="icon-list.png" width="22" height="22"/>
         <image name="icon-map.png" width="22" height="22"/>
         <image name="icon-user.png" width="22" height="22"/>
+        <image name="like.png" width="33" height="33"/>
     </resources>
 </document>

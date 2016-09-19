@@ -68,7 +68,12 @@ class HomeViewController : UIViewController {
             let price = info["pricing_quote"]["listing_currency"].stringValue + " " + info["pricing_quote"]["nightly_price"].stringValue
             cell.price.text = price
             cell.listingImage.downloadImageFrom(link: info["listing"]["picture_url"].stringValue, contentMode: .ScaleAspectFit)
-            
+//            if cell.likeSelected {
+//                cell.likeButton.setImage(UIImage(named: "like-selected"), forState: .Normal)
+//            } else {
+//                cell.likeButton.setImage(UIImage(named: "like"), forState: .Normal)
+//            }
+//            print(cell.likeSelected)
             
         }
         self.collectionDataSource = CollectionViewDataSource(anItems: listings, cellIdentifier: "listingCell", aconfigureCellBlocks: configureCell)
@@ -89,6 +94,5 @@ class HomeViewController : UIViewController {
             nextController.listingID = selectedListingId
         }
     }
-
     
 }
