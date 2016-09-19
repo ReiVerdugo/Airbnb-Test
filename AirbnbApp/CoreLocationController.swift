@@ -42,7 +42,6 @@ class CoreLocationController: NSObject,CLLocationManagerDelegate {
 
 
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        print("didChangeAuthorizationStatus")
         
         switch status {
         case .NotDetermined:
@@ -65,7 +64,6 @@ class CoreLocationController: NSObject,CLLocationManagerDelegate {
             break;
             
         case .Denied:
-            Router.location = "Venezuela"
             print(".Denied")
             break
             
@@ -109,16 +107,11 @@ class CoreLocationController: NSObject,CLLocationManagerDelegate {
                             self.lastCity = placemark.locality!
                             self.delegate?.coreLocation(self, changed: true)
                             
-                            
-                            
                         }
-                        
                         
                     }
                     
                 }
-
-
             }
         })
         
@@ -128,21 +121,14 @@ class CoreLocationController: NSObject,CLLocationManagerDelegate {
         
         let latText:String = String(format: "%.4f", lat)
         let lonText:String = String(format: "%.4f", lon)
-        
-        print("TEXTOS: \(latText) y \(lonText)")
             
         if let useGps = defaults.stringForKey("gps") {
             if useGps == "true"{
 
                 Router.location = "\(lonText),\(latText)"
-
-
             }
             
         }
-
-
-    
 
     }
 }

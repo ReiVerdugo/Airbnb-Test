@@ -503,6 +503,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="XC7-Ay-B8V" id="NUC-Zt-qz5"/>
+                        <segue destination="Kl0-Eb-37J" kind="show" identifier="detail" id="c90-pP-gY0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PaG-nw-h6j" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -909,6 +910,6 @@
         <image name="my-location.png" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="edj-ao-ZR2"/>
+        <segue reference="c90-pP-gY0"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -23,6 +23,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     var points : GMSMutablePath = GMSMutablePath()
     var markers : Set<GMSMarker> = []
     var currentCity = ""
+    var selectedListingId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +49,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             "user_lat" : (CoreLocationController.sharedInstance.locationManager.location?.coordinate.latitude)!,
             "user_lng" : (CoreLocationController.sharedInstance.locationManager.location?.coordinate.longitude)!
         ]
-        print(parameters)
         
         Alamofire.request(Router.getListings(parameters))
             .validate()
@@ -101,6 +101,16 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         
     }
     
+    func mapView(mapView: GMSMapView, didTapInfoWindowOfMarker marker: GMSMarker) {
+        for housing in self.listings{
+            if housing.info["listing"]["name"].stringValue == marker.title {
+                self.selectedListingId = housing.info["listing"]["id"].stringValue
+                self.performSegueWithIdentifier("detail", sender: self)
+            }
+        }
+    }
+
+    
     func drawMarkers () {
         for marker in self.markers {
             if marker.map == nil {
@@ -117,6 +127,13 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detail" {
+            let nextController = segue.destinationViewController as! DetailView
+            nextController.listingID = selectedListingId
+        }
+
+    }
    
     
 }
