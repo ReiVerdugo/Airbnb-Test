@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class ProfileViewController: UITableViewController {
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var goToFavoritesLabel: UILabel!
+    @IBOutlet weak var logoutLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavBar(NSLocalizedString("Perfil", comment: ""))
         returnUserData()
-//        self.tableView
+        translateTexts()
     }
     
     func returnUserData()
@@ -32,13 +35,24 @@ class ProfileViewController: UITableViewController {
             }
             else
             {
-                print("fetched user: \(result)")
                 self.nameLabel.text = (result["first_name"] as! String) + " " + (result["last_name"] as! String)
                 self.emailLabel.text = (result["email"] as! String)
                 self.profileImage.downloadImageFrom(link: (result["picture"]!!["data"]!!["url"] as! String), contentMode: .ScaleAspectFill)
-                
+                self.profileImage.layer.cornerRadius = self.profileImage.frame.height / 2
             }
         })
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.row == 4 {
+            FBSDKLoginManager().logOut()
+            self.performSegueWithIdentifier("home", sender: self)
+        }
+    }
+    
+    func translateTexts () {
+        goToFavoritesLabel.text = NSLocalizedString("Ir a mis favoritos", comment: "")
+        logoutLabel.text = NSLocalizedString("Cerrar sesión", comment: "")
     }
     
 }

@@ -13,14 +13,11 @@ import Alamofire
 
 class LoginView : UIViewController {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
+        
+        // If user is already logged in
         if (FBSDKAccessToken.currentAccessToken() != nil){
-            // User is already logged in, do work such as go to next view controller.
             self.performSegueWithIdentifier("login", sender: nil)
         }
     }
@@ -32,20 +29,15 @@ class LoginView : UIViewController {
             (result, error) -> Void in
             if error != nil {
                 print(FBSDKAccessToken.currentAccessToken())
-                print("Entre aqui")
             } else if result.isCancelled {
                 print("Cancelled")
             } else {
-                print(result)
                 print("LoggedIn")
-//                "token":FBSDKAccessToken.currentAccessToken().tokenString,
                 self.performSegueWithIdentifier("login", sender: nil)
                 
             }
         })
 
     }
-    
-    
 
 }

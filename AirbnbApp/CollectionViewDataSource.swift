@@ -20,7 +20,7 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollecti
         super.init()
     }
     
-    
+    // Initializes datasource with cell's configuration
     init(anItems:Array<AnyObject>, cellIdentifier:String, aconfigureCellBlocks: (CollectionViewCellConfigureBlock)){
         
         self.items = anItems
@@ -28,15 +28,17 @@ class CollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollecti
         self.configureCellBlock = aconfigureCellBlocks
     }
     
+    // Sets the item at a given index path
     func itemAtIndexPath(indexPath: NSIndexPath) -> AnyObject{
-        
         return items[indexPath.row]
     }
     
+    // Sets the number of items in section
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return items.count
     }
     
+    // Uses the closure to configure the cells
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(cellIdentifier, forIndexPath: indexPath)
         let item = self.itemAtIndexPath(indexPath)

@@ -1,0 +1,87 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "0CY-wP-iFU"; */
+"0CY-wP-iFU.text" = "Label";
+
+/* Class = "UILabel"; text = "Appartment Name"; ObjectID = "1DE-Im-1ao"; */
+"1DE-Im-1ao.text" = "Appartment Name";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "1Pd-YI-Mfh"; */
+"1Pd-YI-Mfh.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Perfil"; ObjectID = "4XG-cg-x4U"; */
+"4XG-cg-x4U.title" = "Perfil";
+
+/* Class = "UILabel"; text = "Appartment Name"; ObjectID = "4pT-Cb-b7C"; */
+"4pT-Cb-b7C.text" = "Appartment Name";
+
+/* Class = "UILabel"; text = "Appartment Name"; ObjectID = "5Xi-MC-0M2"; */
+"5Xi-MC-0M2.text" = "Appartment Name";
+
+/* Class = "UILabel"; text = "Description"; ObjectID = "9cq-HX-1ET"; */
+"9cq-HX-1ET.text" = "Description";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "Cvw-RE-oqP"; */
+"Cvw-RE-oqP.text" = "0";
+
+/* Class = "UILabel"; text = "Appartment Type"; ObjectID = "EAC-jp-Np4"; */
+"EAC-jp-Np4.text" = "Appartment Type";
+
+/* Class = "UILabel"; text = "Beds"; ObjectID = "IF6-iL-hgv"; */
+"IF6-iL-hgv.text" = "Beds";
+
+/* Class = "UITabBarItem"; title = "Listado"; ObjectID = "Ihe-dB-UnV"; */
+"Ihe-dB-UnV.title" = "Listado";
+
+/* Class = "UILabel"; text = "Appartment"; ObjectID = "Im1-vD-Fxs"; */
+"Im1-vD-Fxs.text" = "Appartment";
+
+/* Class = "UILabel"; text = "Cerrar sesión"; ObjectID = "KnX-0d-N20"; */
+"KnX-0d-N20.text" = "Cerrar sesión";
+
+/* Class = "UILabel"; text = "Ir a mis favoritos"; ObjectID = "KrQ-Nh-snf"; */
+"KrQ-Nh-snf.text" = "Ir a mis favoritos";
+
+/* Class = "UILabel"; text = "Price"; ObjectID = "MRb-FW-dbs"; */
+"MRb-FW-dbs.text" = "Price";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "RxK-B8-rPc"; */
+"RxK-B8-rPc.text" = "0";
+
+/* Class = "UILabel"; text = "airbnb Applicant Test"; ObjectID = "cID-YE-9EA"; */
+"cID-YE-9EA.text" = "airbnb Applicant Test";
+
+/* Class = "UILabel"; text = "Bedrooms"; ObjectID = "cc0-J9-MUA"; */
+"cc0-J9-MUA.text" = "Bedrooms";
+
+/* Class = "UITabBarItem"; title = "Mapa"; ObjectID = "fyl-jg-5ty"; */
+"fyl-jg-5ty.title" = "Mapa";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "jCt-se-CJf"; */
+"jCt-se-CJf.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "lWR-yH-0iP"; */
+"lWR-yH-0iP.text" = "Label";
+
+/* Class = "UILabel"; text = "Bedroom Type"; ObjectID = "np5-5a-U0S"; */
+"np5-5a-U0S.text" = "Bedroom Type";
+
+/* Class = "UILabel"; text = "Appartment"; ObjectID = "p0k-iL-197"; */
+"p0k-iL-197.text" = "Appartment";
+
+/* Class = "UILabel"; text = "0"; ObjectID = "p0l-9K-U03"; */
+"p0l-9K-U03.text" = "0";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "pfM-Ou-XTF"; */
+"pfM-Ou-XTF.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Entrar con Facebook"; ObjectID = "ubE-RI-iVZ"; */
+"ubE-RI-iVZ.normalTitle" = "Entrar con Facebook";
+
+/* Class = "UILabel"; text = "Guests"; ObjectID = "vEH-j5-tq7"; */
+"vEH-j5-tq7.text" = "Guests";
+
+/* Class = "UILabel"; text = "Bathrooms"; ObjectID = "vtz-wv-RE0"; */
+"vtz-wv-RE0.text" = "Bathrooms";
+
+/* Class = "UILabel"; text = "Appartment"; ObjectID = "zuG-Nk-8Ys"; */
+"zuG-Nk-8Ys.text" = "Appartment";

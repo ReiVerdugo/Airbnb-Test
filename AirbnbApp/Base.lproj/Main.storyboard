@@ -535,12 +535,10 @@
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="61"/>
-                                                        </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </imageView>
                                             </subviews>
+                                            <color key="backgroundColor" red="1" green="0.35294117650000001" blue="0.37254901959999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="avE-zY-60L" firstAttribute="centerY" secondItem="cjV-ec-mIe" secondAttribute="centerY" id="5GK-mX-bPV"/>
                                                 <constraint firstItem="avE-zY-60L" firstAttribute="centerX" secondItem="cjV-ec-mIe" secondAttribute="centerX" id="SMu-Fd-aRk"/>
@@ -628,6 +626,41 @@
                                             <segue destination="hY6-Uj-YUe" kind="show" id="Yl7-Zw-RcA"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hcj-J0-Rq5">
+                                        <rect key="frame" x="0.0" y="361" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hcj-J0-Rq5" id="NwE-oX-odr">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cerrar sesión" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KnX-0d-N20">
+                                                    <rect key="frame" x="58" y="12" width="102" height="20"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logout.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Cx-Gn-2l6">
+                                                    <rect key="frame" x="18" y="9" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="3Cx-Gn-2l6" secondAttribute="height" multiplier="1:1" id="boe-qB-t41"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="KnX-0d-N20" firstAttribute="centerY" secondItem="NwE-oX-odr" secondAttribute="centerY" id="19P-pr-kgj"/>
+                                                <constraint firstItem="KnX-0d-N20" firstAttribute="leading" secondItem="NwE-oX-odr" secondAttribute="leadingMargin" constant="15" id="hxU-H7-X3u"/>
+                                                <constraint firstItem="3Cx-Gn-2l6" firstAttribute="centerY" secondItem="NwE-oX-odr" secondAttribute="centerY" id="l4H-Io-tfP"/>
+                                                <constraint firstItem="3Cx-Gn-2l6" firstAttribute="height" secondItem="NwE-oX-odr" secondAttribute="height" multiplier="0.6" id="mM9-3T-c1z"/>
+                                                <constraint firstItem="KnX-0d-N20" firstAttribute="leading" secondItem="3Cx-Gn-2l6" secondAttribute="trailing" constant="15" id="szr-lW-16e"/>
+                                                <constraint firstItem="3Cx-Gn-2l6" firstAttribute="leading" secondItem="NwE-oX-odr" secondAttribute="leadingMargin" constant="10" id="x0u-jY-44u"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="hxU-H7-X3u"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -639,15 +672,18 @@
                     <navigationItem key="navigationItem" id="o7p-Hh-jmf"/>
                     <connections>
                         <outlet property="emailLabel" destination="lWR-yH-0iP" id="S5n-OW-Gh1"/>
+                        <outlet property="goToFavoritesLabel" destination="KrQ-Nh-snf" id="c7r-yI-VHY"/>
+                        <outlet property="logoutLabel" destination="KnX-0d-N20" id="RK2-nh-rxc"/>
                         <outlet property="nameLabel" destination="0CY-wP-iFU" id="uZx-sc-ZjO"/>
                         <outlet property="profileImage" destination="avE-zY-60L" id="nKn-b4-wWI"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="home" id="ncy-BR-Vzi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="we4-TD-B1J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2549" y="1192"/>
         </scene>
-        <!--Favorites View-->
+        <!--Empty Data Set Delegate-->
         <scene sceneID="Adp-Vv-29s">
             <objects>
                 <viewController automaticallyAdjustsScrollViewInsets="NO" id="hY6-Uj-YUe" customClass="FavoritesView" customModule="AirbnbApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -763,6 +799,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="emptyDataSetDelegate" destination="hY6-Uj-YUe" id="7hk-ch-2Pl"/>
+                                    <outlet property="emptyDataSetSource" destination="hY6-Uj-YUe" id="3lc-xK-dUN"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -782,10 +822,10 @@
             </objects>
             <point key="canvasLocation" x="3231" y="1192"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Custom Tab Bar Controller-->
         <scene sceneID="irc-gd-gZs">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="efF-hD-xE3" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="efF-hD-xE3" customClass="CustomTabBarController" customModule="AirbnbApp" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="MrH-1k-bHw">
                         <autoresizingMask key="autoresizingMask"/>
@@ -865,6 +905,7 @@
         <image name="icon-map.png" width="22" height="22"/>
         <image name="icon-user.png" width="22" height="22"/>
         <image name="like.png" width="33" height="33"/>
+        <image name="logout.png" width="33" height="33"/>
         <image name="my-location.png" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>

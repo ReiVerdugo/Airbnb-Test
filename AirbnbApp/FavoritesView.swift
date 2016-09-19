@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import DZNEmptyDataSet
 
 class FavoritesView: UIViewController, SaveInFavoritesProtocol {
     var listings = [NSManagedObject]()
@@ -114,6 +115,62 @@ class FavoritesView: UIViewController, SaveInFavoritesProtocol {
             print("Could not fetch \(error), \(error.userInfo)")
         }
     }
+    
+    
 
+
+}
+
+extension FavoritesView: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+    // ***************************************
+    // MARK: - DZNEmptyDataSet
+    
+    // Sets the image to show to show when there are no items
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "like.png");
+    }
+    
+    // Sets the title to show to show when there are no items
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let text = NSLocalizedString("No has agregado favoritos todavía", comment: "")
+        
+        let attributes :Dictionary = [NSForegroundColorAttributeName: UIColor.darkGrayColor(),
+                                      NSFontAttributeName : UIFont.boldSystemFontOfSize(18)
+        ]
+        let stringWithAttributes = NSMutableAttributedString(string: text, attributes: attributes)
+        return stringWithAttributes
+        
+    }
+    
+    // Sets the description (or subtitle) to show when there are no items
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        
+        let text = NSLocalizedString("Agrega pulsando el botón de Like de cualquiera de los alojamientos", comment: "")
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineBreakMode = .ByWordWrapping
+        paragraphStyle.alignment = .Center
+        
+        let attributes :Dictionary = [NSForegroundColorAttributeName: UIColor.darkGrayColor(),
+                                      NSFontAttributeName : UIFont.boldSystemFontOfSize(14),
+                                      NSParagraphStyleAttributeName: paragraphStyle
+        ]
+        let stringWithAttributes = NSMutableAttributedString(string: text, attributes: attributes)
+        return stringWithAttributes
+        
+    }
+    
+    // Sets the background color to show when there are no items
+    func backgroundColorForEmptyDataSet(scrollView: UIScrollView!) -> UIColor! {
+        return UIColor.whiteColor()
+    }
+    
+    func emptyDataSetShouldDisplay(scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+    
+    func offsetForEmptyDataSet(scrollView: UIScrollView!) -> CGPoint {
+        return CGPointMake(0, -50)
+    }
 
 }

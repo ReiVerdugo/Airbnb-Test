@@ -21,10 +21,10 @@ func UIColorFromRGB(rgbValue: UInt) -> UIColor {
 class SomeManager {
  
     //Orange
-    var primaryColor = UIColorFromRGB(0xFE5000)
+    var primaryColor = UIColorFromRGB(0xFF5A5F)
     
     //Blue
-    var secondaryColor = UIColorFromRGB(0x009DDC)
+    var secondaryColor = UIColor.blackColor()
     
     
     //Current city

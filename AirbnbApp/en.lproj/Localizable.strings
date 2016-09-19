@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  AirbnbApp
+
+  Created by devstn5 on 2016-09-19.
+  Copyright © 2016 NextDots. All rights reserved.
+*/
+
+"Detalle" = "Detail";
+"Favoritos" = "Favorites";
+"No has agregado favoritos todavía" = "You haven't added any favorites yet";
+"Agrega pulsando el botón de Like de cualquiera de los alojamientos" = "Add by tapping the Like button of any listing";
+"Listado" = "Listing";
+"Cargando alojamientos" = "Loading housings";
+"Mapa" = "Map";
+"Perfil" = "Profile";
+"Ir a mis favoritos" = "Go to my favorites";
+"Cerrar sesión" = "Logout";

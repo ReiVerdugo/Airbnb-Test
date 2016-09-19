@@ -85,7 +85,7 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
             cell.listingType.text = info["listing"]["property_type"].stringValue
             let price = info["pricing_quote"]["listing_currency"].stringValue + " " + info["pricing_quote"]["nightly_price"].stringValue
             cell.price.text = price
-            cell.listingImage.downloadImageFrom(link: info["listing"]["picture_url"].stringValue, contentMode: .ScaleAspectFit)
+            cell.listingImage.downloadImageFrom(link: info["listing"]["picture_url"].stringValue, contentMode: .ScaleToFill)
             cell.buttonProtocol = self
             
             // Set favorite icon accordinly

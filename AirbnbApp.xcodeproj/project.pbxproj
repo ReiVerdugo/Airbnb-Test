@@ -26,6 +26,9 @@
 		73BA38221D9061C600329BFE /* my-location.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BA38211D9061C600329BFE /* my-location.png */; };
 		73BA38241D9067CA00329BFE /* Geotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA38231D9067CA00329BFE /* Geotification.swift */; };
 		73BA38261D906D2600329BFE /* CollectionViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA38251D906D2600329BFE /* CollectionViewDelegate.swift */; };
+		73BA38291D90742C00329BFE /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BA38281D90742C00329BFE /* logout.png */; };
+		73BA382E1D907B0800329BFE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 73BA38301D907B0800329BFE /* Localizable.strings */; };
+		73BA38331D907D6400329BFE /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BA38321D907D6400329BFE /* CustomTabBarController.swift */; };
 		73C42F781D8AC8CB0041D769 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C42F771D8AC8CB0041D769 /* AppDelegate.swift */; };
 		73C42F7A1D8AC8CB0041D769 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C42F791D8AC8CB0041D769 /* ViewController.swift */; };
 		73C42F7D1D8AC8CB0041D769 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73C42F7B1D8AC8CB0041D769 /* Main.storyboard */; };
@@ -60,6 +63,12 @@
 		73BA38211D9061C600329BFE /* my-location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "my-location.png"; sourceTree = "<group>"; };
 		73BA38231D9067CA00329BFE /* Geotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geotification.swift; sourceTree = "<group>"; };
 		73BA38251D906D2600329BFE /* CollectionViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDelegate.swift; sourceTree = "<group>"; };
+		73BA38281D90742C00329BFE /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
+		73BA382C1D907AD900329BFE /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Main.strings"; sourceTree = "<group>"; };
+		73BA382D1D907AD900329BFE /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		73BA382F1D907B0800329BFE /* es-MX */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "es-MX"; path = "es-MX.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		73BA38311D907B1200329BFE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		73BA38321D907D6400329BFE /* CustomTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
 		73C42F741D8AC8CB0041D769 /* AirbnbApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirbnbApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73C42F771D8AC8CB0041D769 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73C42F791D8AC8CB0041D769 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				73BA38211D9061C600329BFE /* my-location.png */,
+				73BA38281D90742C00329BFE /* logout.png */,
 				73BA381E1D90577300329BFE /* Map Icons */,
 				73BA381F1D90578000329BFE /* Tab Bar Icons */,
 				73BA38201D90578800329BFE /* Fav Icons */,
@@ -160,6 +170,15 @@
 			name = "Fav Icons";
 			sourceTree = "<group>";
 		};
+		73BA38271D906EF900329BFE /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				0F1664811D8B854D00FC30E9 /* CollectionViewDataSource.swift */,
+				73BA38251D906D2600329BFE /* CollectionViewDelegate.swift */,
+			);
+			name = CollectionView;
+			sourceTree = "<group>";
+		};
 		73C42F6B1D8AC8CB0041D769 = {
 			isa = PBXGroup;
 			children = (
@@ -184,6 +203,7 @@
 				73C42F771D8AC8CB0041D769 /* AppDelegate.swift */,
 				73B72B071D8C6191008A7B67 /* GlobalResources */,
 				73C42FA71D8AEAFD0041D769 /* LoginView.swift */,
+				73BA38321D907D6400329BFE /* CustomTabBarController.swift */,
 				73B72B051D8C49F1008A7B67 /* ProfileViewController.swift */,
 				73C42FA91D8AF03F0041D769 /* HomeViewController.swift */,
 				0F1664831D8B876D00FC30E9 /* ListingCell.swift */,
@@ -191,8 +211,8 @@
 				0F7B8D2D1D8E181800DB61CA /* DetailView.swift */,
 				73BA381C1D90253200329BFE /* FavoritesView.swift */,
 				73BA38231D9067CA00329BFE /* Geotification.swift */,
-				0F1664811D8B854D00FC30E9 /* CollectionViewDataSource.swift */,
-				73BA38251D906D2600329BFE /* CollectionViewDelegate.swift */,
+				73BA38301D907B0800329BFE /* Localizable.strings */,
+				73BA38271D906EF900329BFE /* CollectionView */,
 				73BA381B1D90140D00329BFE /* Images */,
 				73C42F7B1D8AC8CB0041D769 /* Main.storyboard */,
 				73C42F951D8AD28A0041D769 /* airbnb-logo.png */,
@@ -276,7 +296,9 @@
 				73C42F7D1D8AC8CB0041D769 /* Main.storyboard in Resources */,
 				0F7C38FA1D8F87DB00AE7E81 /* like.png in Resources */,
 				0F7C38F41D8F84AA00AE7E81 /* icon-user.png in Resources */,
+				73BA382E1D907B0800329BFE /* Localizable.strings in Resources */,
 				73BA38221D9061C600329BFE /* my-location.png in Resources */,
+				73BA38291D90742C00329BFE /* logout.png in Resources */,
 				0F7C38F01D8F807A00AE7E81 /* bed-icon.png in Resources */,
 				0F7C38EE1D8F807A00AE7E81 /* apartment-icon.png in Resources */,
 			);
@@ -345,6 +367,7 @@
 				0F7B8D2E1D8E181800DB61CA /* DetailView.swift in Sources */,
 				73C42F7A1D8AC8CB0041D769 /* ViewController.swift in Sources */,
 				73BA381D1D90253200329BFE /* FavoritesView.swift in Sources */,
+				73BA38331D907D6400329BFE /* CustomTabBarController.swift in Sources */,
 				73C42F781D8AC8CB0041D769 /* AppDelegate.swift in Sources */,
 				0F1664821D8B854D00FC30E9 /* CollectionViewDataSource.swift in Sources */,
 				73B72B091D8C61C2008A7B67 /* MapViewController.swift in Sources */,
@@ -360,10 +383,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		73BA38301D907B0800329BFE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				73BA382F1D907B0800329BFE /* es-MX */,
+				73BA38311D907B1200329BFE /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		73C42F7B1D8AC8CB0041D769 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				73C42F7C1D8AC8CB0041D769 /* Base */,
+				73BA382C1D907AD900329BFE /* es-MX */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -372,6 +405,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				73C42F841D8AC8CB0041D769 /* Base */,
+				73BA382D1D907AD900329BFE /* es-MX */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
