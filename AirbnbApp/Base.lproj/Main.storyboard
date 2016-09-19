@@ -493,7 +493,14 @@
                             <constraint firstItem="XC7-Ay-B8V" firstAttribute="leading" secondItem="vxN-b0-fEC" secondAttribute="leadingMargin" constant="-20" id="p0J-EH-hXF"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="HI3-On-ELy"/>
+                    <navigationItem key="navigationItem" id="HI3-On-ELy">
+                        <barButtonItem key="leftBarButtonItem" image="my-location.png" id="M9A-mN-4Pw">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="zoomToMyLocation:" destination="dhR-Pl-TPl" id="J2l-gU-l2i"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="XC7-Ay-B8V" id="NUC-Zt-qz5"/>
                     </connections>
@@ -858,6 +865,7 @@
         <image name="icon-map.png" width="22" height="22"/>
         <image name="icon-user.png" width="22" height="22"/>
         <image name="like.png" width="33" height="33"/>
+        <image name="my-location.png" width="22" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="edj-ao-ZR2"/>

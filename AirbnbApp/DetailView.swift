@@ -102,6 +102,7 @@ class DetailView: UIViewController, GMSMapViewDelegate {
         self.mapView.animateWithCameraUpdate(camera)
     }
     
+
     func drawMarkers () {
         for marker in self.markers {
             if marker.map == nil {

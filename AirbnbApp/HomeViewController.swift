@@ -23,6 +23,7 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
     var limit = 30
     var listings = [ListingClass]()
     var collectionDataSource = CollectionViewDataSource()
+    var collectionDelegate = CollectionViewDelegate()
     var selectedListingId = ""
     var currentCity = ""
     var favoritesDictionary : [String] = []
@@ -98,9 +99,9 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
             
         }
         self.collectionDataSource = CollectionViewDataSource(anItems: listings, cellIdentifier: "listingCell", aconfigureCellBlocks: configureCell)
-        self.collectionDataSource.didSelectBlock = {indexPath in self.didSelect(indexPath)}
+        self.collectionDelegate.didSelectBlock = {indexPath in self.didSelect(indexPath)}
         self.collectionView.dataSource = self.collectionDataSource
-        self.collectionView.delegate = collectionDataSource
+        self.collectionView.delegate = self.collectionDelegate
         
     }
     
@@ -208,6 +209,18 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
         }
 
 
+    }
+    
+    override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        if (self.view.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Compact) {
+            self.collectionDelegate.width = 1
+            self.collectionDelegate.height = 0.5
+            self.collectionView.reloadData()
+        } else {
+            self.collectionDelegate.width = 0.5
+            self.collectionDelegate.height = 1
+            self.collectionView.reloadData()
+        }
     }
     
 }

@@ -109,6 +109,13 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         }
         
     }
+    
+    @IBAction func zoomToMyLocation(sender: UIBarButtonItem) {
+        let locpin = CLLocationCoordinate2D(latitude: (CoreLocationController.sharedInstance.locationManager.location?.coordinate.latitude)!, longitude: (CoreLocationController.sharedInstance.locationManager.location?.coordinate.longitude)!)
+        let camera: GMSCameraUpdate = GMSCameraUpdate.setTarget(locpin, zoom: 18)
+        self.mapView.animateWithCameraUpdate(camera)
+    }
+    
 
    
     
