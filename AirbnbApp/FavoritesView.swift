@@ -121,6 +121,9 @@ class FavoritesView: UIViewController, SaveInFavoritesProtocol {
 
 }
 
+/**
+ Extends the *FavoriteView* class to implement *DZNEmptyDataSetSource* and *DZNEmptyDataSetDelegate* methods.
+ */
 extension FavoritesView: DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
     // ***************************************
     // MARK: - DZNEmptyDataSet

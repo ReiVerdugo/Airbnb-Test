@@ -17,7 +17,9 @@ protocol CoreLocationControllerDelegate {
     
 }
 
-
+/**
+ Implements the methods to handle the user's current location.
+ */
 class CoreLocationController: NSObject,CLLocationManagerDelegate {
     
     var locationManager:CLLocationManager = CLLocationManager()

@@ -6,6 +6,9 @@
   Copyright © 2016 NextDots. All rights reserved.
 */
 
+/**
+ Translates the *NSLocalizedString*s used in the Application.
+ */
 "Detalle" = "Detail";
 "Favoritos" = "Favorites";
 "No has agregado favoritos todavía" = "You haven't added any favorites yet";

@@ -25,6 +25,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     var currentCity = ""
     var selectedListingId = ""
     
+    // ***************************************
+    // MARK: - ViewController Methods
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavBar(NSLocalizedString("Mapa", comment: ""))
@@ -40,6 +44,26 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
 
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detail" {
+            let nextController = segue.destinationViewController as! DetailView
+            nextController.listingID = selectedListingId
+        }
+        
+    }
+    
+    
+    /**
+     It returns the list of housings near the current user's location.
+     
+     ## Parameters used to get data ##
+     - Parameter clientid: An specific client_id to get data from API.
+     - Parameter limit: The maximum number of housings to get (in this case it's 30).
+     - Parameter location: User's current city, parameter obtained from *ViewDidLoad*'s method.
+     - Parameter userlat: The user's current latitude (this actually doesn't affect the search)
+     - Parameter userlng: The user's current longitude (doesn't affect the search either)
+     
+     */
     func getListings () {
         SVProgressHUD.showWithStatus(NSLocalizedString("Cargando alojamientos", comment: ""))
         let parameters : [String: AnyObject] = [
@@ -92,6 +116,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
                 SVProgressHUD.dismiss()
         }
     }
+    
+    // ***************************************
+    // MARK: - Map Methods
+
+    
     // Move the camera to see all the markers added
     func setUpMap() {
         self.mapView.myLocationEnabled = true
@@ -110,7 +139,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         }
     }
 
-    
     func drawMarkers () {
         for marker in self.markers {
             if marker.map == nil {
@@ -127,13 +155,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "detail" {
-            let nextController = segue.destinationViewController as! DetailView
-            nextController.listingID = selectedListingId
-        }
-
-    }
+    
    
     
 }

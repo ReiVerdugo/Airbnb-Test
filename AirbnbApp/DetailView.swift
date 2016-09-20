@@ -47,6 +47,9 @@ class DetailView: UIViewController, GMSMapViewDelegate {
         }
     }
     
+    /**
+     Gets the detail of a housing using the listingID given from *HomeViewController*
+     */
     func getDetail () {
         let parameters : [String: AnyObject] = [
             "client_id" : "3092nxybyb0otqw18e8nh5nty",

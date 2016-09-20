@@ -74,6 +74,9 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
         }
     }
     
+    // ***************************************
+    // MARK: - User created methods
+    
     /**
      It returns the list of housings near the current user's location.
      

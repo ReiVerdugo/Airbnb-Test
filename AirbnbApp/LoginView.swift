@@ -22,6 +22,9 @@ class LoginView : UIViewController {
         }
     }
     
+    /**
+     Handles the Login with Facebook.
+     */
     @IBAction func loginAction(sender: UIButton) {
         let idk = FBSDKLoginManager()
         idk.logInWithReadPermissions(["public_profile", "email"], handler: {
