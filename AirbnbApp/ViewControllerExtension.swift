@@ -3,7 +3,7 @@
 //  Applicant Test
 //
 //  Created by devstn5 on 2016-08-24.
-//  Copyright © 2016 KogiMobile. All rights reserved.
+//  Copyright © 2016 NextDots. All rights reserved.
 //
 
 import Foundation

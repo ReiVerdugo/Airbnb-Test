@@ -28,6 +28,9 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
     var currentCity = ""
     var favoritesDictionary : [String] = []
     
+    // ***************************************
+    // MARK: - UIViewController Methods
+    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(true)
         initDictionary()
@@ -46,6 +49,42 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
         })
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detail" {
+            let nextController = segue.destinationViewController as! DetailView
+            nextController.listingID = selectedListingId
+        }
+    }
+    
+    /**
+     Changes the layout of the collectionView according to device's current size.
+     It also supports landscape/portrait orientations
+     
+     */
+    override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
+        super.willTransitionToTraitCollection(newCollection, withTransitionCoordinator: coordinator)
+        if (self.view.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Compact) {
+            self.collectionDelegate.width = 1
+            self.collectionDelegate.height = 0.5
+            self.collectionView.reloadData()
+        } else {
+            self.collectionDelegate.width = 0.5
+            self.collectionDelegate.height = 1
+            self.collectionView.reloadData()
+        }
+    }
+    
+    /**
+     It returns the list of housings near the current user's location.
+     
+     ## Parameters used to get data ##
+     - Parameter clientid: An specific client_id to get data from API.
+     - Parameter limit: The maximum number of housings to get (in this case it's 30).
+     - Parameter location: User's current city, parameter obtained from *ViewDidLoad*'s method.
+     - Parameter userlat: The user's current latitude (this actually doesn't affect the search)
+     - Parameter userlng: The user's current longitude (doesn't affect the search either)
+     
+     */
     func getListings () {
         SVProgressHUD.showWithStatus(NSLocalizedString("Cargando alojamientos", comment: ""))
         let parameters : [String: AnyObject] = [
@@ -76,8 +115,21 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
         }
     }
     
+    
+    /**
+     Set's the CollectionView *Delegate* and *DataSource*, and configures the corresponding methods to be used inside them.
+     
+     ## Parameters used to get data ##
+     - Parameter clientid: An specific client_id to get data from API.
+     - Parameter limit: The maximum number of housings to get (in this case it's 30).
+     - Parameter location: User's current city, parameter obtained from *ViewDidLoad*'s method.
+     - Parameter userlat: The user's current latitude (this actually doesn't affect the search)
+     - Parameter userlng: The user's current longitude (doesn't affect the search either)
+     
+     */
     func setCollection(){
         
+        // Configures how the cell are going to be displayed, to be used as a parameter inside the *cellForItemAtIndexPath* method, from the *CollectionViewDataSource*
         let configureCell: CollectionViewCellConfigureBlock = {cell,listing in
             let info = (listing as! ListingClass).info
             let cell = cell as! ListingCell
@@ -105,18 +157,26 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
         
     }
     
+    /**
+     Configures the closure to be passed as a parameter to the CollectionDelegate, so it sets the code to be execute when the uses selects a cell.
+     In this case, it gets the selected housing's Id to be used in the request from the detail view.
+     
+     */
     func didSelect (indexPath : NSIndexPath) {
         selectedListingId = listings[indexPath.row].info["listing"]["id"].stringValue
         self.performSegueWithIdentifier("detail", sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "detail" {
-            let nextController = segue.destinationViewController as! DetailView
-            nextController.listingID = selectedListingId
-        }
-    }
     
+    /**
+     Saves the seleted housing to Favorites so it can be accessed anytime, even without Internet access.
+
+     - Parameter cell: The ListingCell selected.
+   
+     ## Important notes ##
+     1. If the cell is not marked as favorite, it will mark it and save it, so it can be accessed from the profile view, *go to favorites* option.
+     2. If the cell was marked as favorite already, it will remove it from users' favorites and it will change the icon
+     */
     func saveFavorite(cell: ListingCell) {
         cell.likeSelected = !cell.likeSelected
         let indexPath = self.collectionView.indexPathForCell(cell)
@@ -125,13 +185,14 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
             UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
-        // Add to favorites
+        // If the cell is now selected, save it to favorites
         if cell.likeSelected {
             
             let entity =  NSEntityDescription.entityForName("Housing",
                                                             inManagedObjectContext:managedContext)
             let listing = NSManagedObject(entity: entity!,
                                          insertIntoManagedObjectContext: managedContext)
+            // Saving the housing attributes
             listing.setValue(info["listing"]["name"].stringValue, forKey: "name")
             listing.setValue(info["listing"]["id"].stringValue, forKey: "id")
             listing.setValue(info["listing"]["bathrooms"].stringValue, forKey: "bathrooms")
@@ -157,7 +218,7 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
                 print("Could not save \(error), \(error.userInfo)")
             }
 
-        // Remove from favorites
+        // If the cell is now deselected, remove from favorites
         } else {
             let request = NSFetchRequest(entityName: "Housing")
             request.returnsObjectsAsFaults = false;
@@ -188,6 +249,9 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
         }
     }
     
+    /**
+     Initializes an array with the id of the favorite housings, to get a quick access to them and verify if a gotten housing is already favorite or not.
+     */
     func initDictionary () {
         self.favoritesDictionary.removeAll()
         let appDelegate =
@@ -211,16 +275,6 @@ class HomeViewController : UIViewController, SaveInFavoritesProtocol {
 
     }
     
-    override func willTransitionToTraitCollection(newCollection: UITraitCollection, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        if (self.view.traitCollection.verticalSizeClass == UIUserInterfaceSizeClass.Compact) {
-            self.collectionDelegate.width = 1
-            self.collectionDelegate.height = 0.5
-            self.collectionView.reloadData()
-        } else {
-            self.collectionDelegate.width = 0.5
-            self.collectionDelegate.height = 1
-            self.collectionView.reloadData()
-        }
-    }
+    
     
 }

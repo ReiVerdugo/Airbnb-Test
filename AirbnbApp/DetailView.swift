@@ -71,6 +71,11 @@ class DetailView: UIViewController, GMSMapViewDelegate {
 
     }
     
+    /**
+     Given a JSON-formatted-information, initializes all the labels, maps, and images from the current view
+     
+     - parameter info: The JSON-formatted-information to be used
+     */
     func setLabels (info : JSON) {
         self.listingName.text = info["name"].stringValue
         self.listingType.text = info["property_type"].stringValue
@@ -95,14 +100,18 @@ class DetailView: UIViewController, GMSMapViewDelegate {
 
     }
     
-    // Move the camera to see all the markers added
+    /**
+     Moves the camera to the marker added, so the location of the housing is in the middle of the map
+     */
     func setUpMap() {
         let locpin = self.locations[0]
         let camera: GMSCameraUpdate = GMSCameraUpdate.setTarget(locpin, zoom: 16)
         self.mapView.animateWithCameraUpdate(camera)
     }
     
-
+    /**
+     For each marker in the current view, draw it in the map, if it's not already drawn
+     */
     func drawMarkers () {
         for marker in self.markers {
             if marker.map == nil {
@@ -112,6 +121,9 @@ class DetailView: UIViewController, GMSMapViewDelegate {
         
     }
     
+    /**
+     If the user comes from favorites, initializes all the labels with the stored favorite housing's information.
+     */
     func initFavorite () {
         if let info = currentFavorite {
             self.listingName.text = info.valueForKey("name") as? String

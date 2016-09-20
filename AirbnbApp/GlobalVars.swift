@@ -1,9 +1,9 @@
 //
 //  GlobalVars.swift
-//  Beset Bear
+//  AirbnbApp
 //
-//  Created by Daniela Rodriguez on 7/15/15.
-//  Copyright (c) 2015 AMS. All rights reserved.
+//  Created by devstn5 on 2016-09-16.
+//  Copyright © 2016 NextDots. All rights reserved.
 //
 
 import Foundation
@@ -20,24 +20,18 @@ func UIColorFromRGB(rgbValue: UInt) -> UIColor {
 
 class SomeManager {
  
-    //Orange
+    // Primary color from Airbnb
     var primaryColor = UIColorFromRGB(0xFF5A5F)
     
-    //Blue
+    // Secondary color
     var secondaryColor = UIColor.blackColor()
     
     
     //Current city
     var currentCity = "Venezuela"
-    
     var sentToken = false
-    
     var phoneToken : NSString = ""
-    
-    var listId = ""
-    
     var usingMap = false
-    
     static let sharedInstance = SomeManager()
 
 }

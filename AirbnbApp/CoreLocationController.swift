@@ -1,10 +1,9 @@
 //
 //  CoreLocationController.swift
-//  Akizta
+//  AirbnbApp
 //
-//  Created by Daniela Rodriguez on 7/9/15.
-//  Modified by Daniela Rodriguez on 3/10/15.
-//  Copyright (c) 2015 AMS. All rights reserved.
+//  Created by devstn5 on 2016-09-16.
+//  Copyright © 2016 NextDots. All rights reserved.
 //
 
 import UIKit
