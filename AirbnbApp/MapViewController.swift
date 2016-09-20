@@ -36,11 +36,14 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         let geocoder = GMSGeocoder()
         geocoder.reverseGeocodeCoordinate((CoreLocationController.sharedInstance.locationManager.location?.coordinate)!, completionHandler: {
             (response, error) -> Void in
-            let throughfare = (response?.firstResult()!.thoroughfare!)!
-            let city = (response?.firstResult()!.locality!)!
-            self.currentCity = throughfare + " " + city
-            self.getListings()
-        })
+            if let throughfare = (response?.firstResult()!.thoroughfare!) {
+                self.currentCity = throughfare
+                if let locality = (response?.firstResult()!.locality!) {
+                    self.currentCity += locality
+                }
+            }
+            
+            self.getListings()        })
 
     }
     
