@@ -11,3 +11,6 @@ The application was developed using Swift 2.2. It also uses the endpoints from A
 - Size Classes: Certain views adapt to device's orientation (Portrait or Landscape)
 - Favorites: Any 'faved' accomodations will be listed in user's favorites, and they will be available even when there's no internet access.
 - Facebook Login available.
+
+# Usage
+This project was developed using Cocoapods libraries integrarion, therefore, to run this app in an emulator, you must have cocoapods installed in your Mac. Run *pod install* in the Podfile's path and open in Xcode via the *xc.workspace* file (instead of *xc.xcodeproj*). 
